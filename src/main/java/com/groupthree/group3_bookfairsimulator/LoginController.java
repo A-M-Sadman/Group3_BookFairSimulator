@@ -55,6 +55,17 @@ public class LoginController
             HelloApplication.stage.setScene(scene);
         }
 
+
+
+        else {
+
+            // Invalid login
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Failed");
+            alert.setHeaderText("Invalid credentials");
+            alert.setContentText("Please check your ID and password.");
+            alert.showAndWait();
+        }
     }
 
     @javafx.fxml.FXML
