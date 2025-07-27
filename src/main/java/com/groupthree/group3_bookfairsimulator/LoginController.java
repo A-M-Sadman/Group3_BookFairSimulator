@@ -58,8 +58,6 @@ public class LoginController
 
 
         else {
-
-            // Invalid login
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Invalid credentials");
