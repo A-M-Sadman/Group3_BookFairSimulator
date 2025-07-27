@@ -43,21 +43,42 @@ public class LoginController
             return;
         }
 
-        if ((userInput.getValue().equals("Stall Owner")) && (passInput.getText().equals("2330322"))){
+        if ((userInput.getValue().equals("Author")) && (passInput.getText().equals("2310717"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setTitle("Author Dashboard");
+            HelloApplication.stage.setScene(scene);
+
+        } else if ((userInput.getValue().equals("Publisher")) && (passInput.getText().equals("2310717"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setTitle("Publisher Dashboard");
+            HelloApplication.stage.setScene(scene);
+
+        } else if ((userInput.getValue().equals("Stall Owner")) && (passInput.getText().equals("2330322"))){
             AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/StallOwnerDashboard.fxml"));
             Scene scene = new Scene(root);
+            HelloApplication.stage.setTitle("Stall Owner Dashboard");
             HelloApplication.stage.setScene(scene);
-        }
 
-        if ((userInput.getValue().equals("Maintenance Officer")) && (passInput.getText().equals("2330322"))){
+        } else if ((userInput.getValue().equals("Maintenance Officer")) && (passInput.getText().equals("2330322"))){
             AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/MaintenanceOfficerDashboard.fxml"));
             Scene scene = new Scene(root);
+            HelloApplication.stage.setTitle("Maintenance Officer Dashboard");
             HelloApplication.stage.setScene(scene);
-        }
 
+        } else if ((userInput.getValue().equals("Security Officer")) && (passInput.getText().equals("2211312"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/HelpDeskOfficerDasboard.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setTitle("Security Officer Dashboard");
+            HelloApplication.stage.setScene(scene);
 
-
-        else {
+        } else if ((userInput.getValue().equals("Help Desk Officer")) && (passInput.getText().equals("2211312"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/HelpDeskOfficerDasboard.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setTitle("Help Desk Officer Dashboard");
+            HelloApplication.stage.setScene(scene);
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Invalid credentials");
