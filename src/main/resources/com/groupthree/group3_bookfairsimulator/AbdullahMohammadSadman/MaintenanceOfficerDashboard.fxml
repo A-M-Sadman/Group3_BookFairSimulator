@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.MaintenanceOfficerDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.MaintenanceOfficerDashboardController">
+   <children>
+      <Label layoutX="95.0" layoutY="40.0" text="Maintenance Officer Dasboard">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="542.0" layoutY="370.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <Button layoutX="95.0" layoutY="112.0" mnemonicParsing="false" onAction="#reportCleanedArea" text="Report Cleaned Area">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="358.0" layoutY="112.0" mnemonicParsing="false" onAction="#checkSchedule" text="Check Schedule">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="126.0" layoutY="155.0" mnemonicParsing="false" onAction="#logRepair" text="Log Repair">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="336.0" layoutY="155.0" mnemonicParsing="false" onAction="#markCompletedTask" text="Mark Completed Tasks">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="97.0" layoutY="198.0" mnemonicParsing="false" onAction="#viewPendingTask" text="View Pending Tasks">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="342.0" layoutY="198.0" mnemonicParsing="false" onAction="#updateFacilityStatus" text="Update Facility Status">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="84.0" layoutY="243.0" mnemonicParsing="false" onAction="#reportATechnicalIssue" text="Report a Technical Issue">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="362.0" layoutY="243.0" mnemonicParsing="false" onAction="#checkSupply" text="Check Supplies">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

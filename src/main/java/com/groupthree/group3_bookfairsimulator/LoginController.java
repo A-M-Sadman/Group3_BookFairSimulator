@@ -42,11 +42,19 @@ public class LoginController
             loginLabel.setText("Choose user and enter password!");
             return;
         }
-        if ((userInput.getValue().equals("Stall Owner")) && (passInput.getText().equals("Sadman2330322"))){
+
+        if ((userInput.getValue().equals("Stall Owner")) && (passInput.getText().equals("2330322"))){
             AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/StallOwnerDashboard.fxml"));
             Scene scene = new Scene(root);
             HelloApplication.stage.setScene(scene);
         }
+
+        if ((userInput.getValue().equals("Maintenance Officer")) && (passInput.getText().equals("2330322"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/MaintenanceOfficerDashboard.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setScene(scene);
+        }
+
     }
 
     @javafx.fxml.FXML
