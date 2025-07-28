@@ -1,11 +1,18 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.util.ArrayList;
+
 public class Book {
     private String title;
     private String author;
     private double price;
     private int quantity;
     private String genre;
+
+    protected static ArrayList<Book> bookList = new ArrayList<>();
+
+    public Book() {
+    }
 
     public Book(String title, String author, double price, int quantity, String genre) {
         this.title = title;

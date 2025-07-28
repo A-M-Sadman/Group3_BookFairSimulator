@@ -12,6 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book.bookList;
+
 public class AddBookController
 {
     @javafx.fxml.FXML
@@ -32,7 +34,7 @@ public class AddBookController
         genreInput.getItems().addAll("Action", "Romance", "Thriller", "Horror");
     }
 
-    ArrayList<Book> bookList = new ArrayList<>();
+
 
     @javafx.fxml.FXML
     public void back(ActionEvent actionEvent) throws IOException {
@@ -46,6 +48,13 @@ public class AddBookController
         if ((titleInput.getText().isEmpty()) || (authorInput.getText().isEmpty()) || (priceInput.getText().isEmpty()) || (quantityInput.getText().isEmpty()) || (genreInput.getValue() == null)){
             addBookLabel.setText("Please fill-up all the input fields!");
             return;
+        }
+
+        for (Book b : bookList){
+            if ((b.getTitle().equals(titleInput.getText())) && (b.getAuthor().equals(authorInput.getText()))){
+                addBookLabel.setText("Book already exists in the inventory!");
+                return;
+            }
         }
         Book book = new Book(
                 titleInput.getText(),
