@@ -78,13 +78,19 @@ public class LoginController
             Scene scene = new Scene(root);
             HelloApplication.stage.setTitle("Help Desk Officer Dashboard");
             HelloApplication.stage.setScene(scene);
-        } else {
+        }
+        else if ((userInput.getValue().equals("Visitor")) && (passInput.getText().equals("12345"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/visitor.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setScene(scene);
+        }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Invalid credentials");
             alert.setContentText("Please check your ID and password.");
             alert.showAndWait();
         }
+
     }
 
     @javafx.fxml.FXML
