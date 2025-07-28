@@ -50,7 +50,7 @@ public class LoginController
             HelloApplication.stage.setScene(scene);
 
         } else if ((userInput.getValue().equals("Publisher")) && (passInput.getText().equals("2310717"))){
-            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/PublisherDashboard.fxml"));
             Scene scene = new Scene(root);
             HelloApplication.stage.setTitle("Publisher Dashboard");
             HelloApplication.stage.setScene(scene);
