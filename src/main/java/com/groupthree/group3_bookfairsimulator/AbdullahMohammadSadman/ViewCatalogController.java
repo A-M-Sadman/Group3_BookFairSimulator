@@ -35,12 +35,11 @@ public class ViewCatalogController
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         genreCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
-
-        bookTableView.getItems().addAll(bookList);
     }
 
     @javafx.fxml.FXML
     public void show(ActionEvent actionEvent) {
+        bookTableView.getItems().addAll(bookList);
     }
 
     @javafx.fxml.FXML
