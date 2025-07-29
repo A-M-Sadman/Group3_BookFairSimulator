@@ -68,7 +68,7 @@ public class LoginController
             HelloApplication.stage.setScene(scene);
 
         } else if ((userInput.getValue().equals("Security Officer")) && (passInput.getText().equals("2211312"))){
-            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/HelpDeskOfficerDasboard.fxml"));
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/securityOfficerDashboard.fxml"));
             Scene scene = new Scene(root);
             HelloApplication.stage.setTitle("Security Officer Dashboard");
             HelloApplication.stage.setScene(scene);
