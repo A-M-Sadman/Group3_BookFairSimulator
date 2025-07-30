@@ -44,4 +44,11 @@ public class BuyBookController
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }
+
+    @javafx.fxml.FXML
+    public void next(ActionEvent actionEvent) throws IOException {
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/JoinEvent.fxml"));
+        Scene scene = new Scene(root);
+        HelloApplication.stage.setScene(scene);
+    }
 }

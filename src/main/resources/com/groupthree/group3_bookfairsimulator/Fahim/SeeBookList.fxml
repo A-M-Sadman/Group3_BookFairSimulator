@@ -35,6 +35,7 @@
       <Button layoutX="492.0" layoutY="102.0" mnemonicParsing="false" onAction="#addFavorite" prefHeight="44.0" prefWidth="159.0" text="Add to Favorites" />
       <Label fx:id="favoriteLable" layoutX="492.0" layoutY="154.0" prefHeight="36.0" prefWidth="235.0" />
       <Button layoutX="542.0" layoutY="32.0" mnemonicParsing="false" onAction="#buyBook" prefHeight="44.0" prefWidth="159.0" text="Buy Book" />
-      <Button layoutX="561.0" layoutY="505.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="44.0" prefWidth="159.0" text="&lt;&lt;Dashbord" />
+      <Button layoutX="413.0" layoutY="505.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="44.0" prefWidth="159.0" text="&lt;&lt;Dashbord" />
+      <Button layoutX="590.0" layoutY="505.0" mnemonicParsing="false" onAction="#next" prefHeight="44.0" prefWidth="138.0" text="Next &gt;" />
    </children>
 </AnchorPane>

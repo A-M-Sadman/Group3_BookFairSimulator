@@ -32,7 +32,8 @@
       <Button layoutX="442.0" layoutY="222.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="30.0" prefWidth="79.0" text="Check Out" />
       <ComboBox layoutX="439.0" layoutY="181.0" prefHeight="30.0" prefWidth="191.0" promptText="Select Payment Mathod" />
       <Label layoutX="442.0" layoutY="267.0" onDragDetected="#checkoutlable" prefHeight="49.0" prefWidth="247.0" />
-      <Button layoutX="342.0" layoutY="376.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="79.0" text="&lt;Back" />
-      <Button layoutX="442.0" layoutY="376.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="30.0" prefWidth="101.0" text="&lt;&lt;Dashbord" />
+      <Button layoutX="342.0" layoutY="376.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="79.0" text="&lt; Back" />
+      <Button layoutX="442.0" layoutY="376.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="30.0" prefWidth="101.0" text="&lt;&lt; Dashbord" />
+      <Button layoutX="566.0" layoutY="376.0" mnemonicParsing="false" onAction="#next" prefHeight="30.0" prefWidth="79.0" text="Next &gt;" />
    </children>
 </AnchorPane>
