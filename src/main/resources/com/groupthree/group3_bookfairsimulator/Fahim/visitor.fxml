@@ -5,7 +5,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="525.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.VisitorController">
    <children>
       <Text layoutX="328.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor" wrappingWidth="141.626953125">
@@ -21,5 +20,6 @@
       <Button layoutX="222.0" layoutY="223.0" mnemonicParsing="false" onAction="#makeMySchedule" prefHeight="48.0" prefWidth="150.0" text="Make My Schedule" />
       <Button layoutX="411.0" layoutY="223.0" mnemonicParsing="false" onAction="#meetAuthor" prefHeight="48.0" prefWidth="164.0" text=" Meet Author" />
       <Button layoutX="609.0" layoutY="223.0" mnemonicParsing="false" onAction="#checkNews" prefHeight="48.0" prefWidth="157.0" text="Check News" />
+      <Button layoutX="609.0" layoutY="449.0" mnemonicParsing="false" onAction="#logout" prefHeight="48.0" prefWidth="157.0" text="Log Out" />
    </children>
 </AnchorPane>

@@ -36,7 +36,8 @@
       <Button layoutX="235.0" layoutY="89.0" mnemonicParsing="false" onAction="#join" prefHeight="36.0" prefWidth="113.0" text="Join" />
       <Button layoutX="235.0" layoutY="139.0" mnemonicParsing="false" onAction="#myEvent" prefHeight="36.0" prefWidth="113.0" text="My Event" />
       <Label fx:id="lable" layoutX="33.0" layoutY="200.0" prefHeight="36.0" prefWidth="276.0" text="Label" />
-      <Button layoutX="450.0" layoutY="521.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="113.0" text="&lt; Back" />
-      <Button layoutX="587.0" layoutY="521.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="36.0" prefWidth="113.0" text="&lt;&lt; Dashbord" />
+      <Button layoutX="403.0" layoutY="521.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="113.0" text="&lt; Back" />
+      <Button layoutX="543.0" layoutY="521.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="36.0" prefWidth="113.0" text="&lt;&lt; Dashbord" />
+      <Button layoutX="672.0" layoutY="521.0" mnemonicParsing="false" onAction="#next" prefHeight="36.0" prefWidth="113.0" text="Next &gt;" />
    </children>
 </AnchorPane>

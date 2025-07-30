@@ -20,7 +20,8 @@
       <ComboBox layoutX="53.0" layoutY="198.0" prefWidth="150.0" promptText="Category" />
       <Label fx:id="lable" layoutX="268.0" layoutY="131.0" prefHeight="47.0" prefWidth="276.0" text="Label" />
       <Button layoutX="75.0" layoutY="243.0" mnemonicParsing="false" onAction="#search" prefHeight="47.0" prefWidth="107.0" text="Search" />
-      <Button layoutX="373.0" layoutY="340.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="107.0" text="&lt; Back" />
-      <Button layoutX="497.0" layoutY="340.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="47.0" prefWidth="107.0" text="&lt;&lt; Dashbord" />
+      <Button layoutX="306.0" layoutY="353.0" mnemonicParsing="false" onAction="#back" prefHeight="47.0" prefWidth="107.0" text="&lt; Back" />
+      <Button layoutX="424.0" layoutY="353.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="47.0" prefWidth="107.0" text="&lt;&lt; Dashbord" />
+      <Button layoutX="541.0" layoutY="353.0" mnemonicParsing="false" onAction="#next" prefHeight="47.0" prefWidth="107.0" text="Next &gt;" />
    </children>
 </AnchorPane>
