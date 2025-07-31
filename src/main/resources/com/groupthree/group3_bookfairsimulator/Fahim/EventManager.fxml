@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="516.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.EventManagerController">
+   <children>
+      <Text layoutX="239.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Manager ">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <Button layoutX="40.0" layoutY="129.0" mnemonicParsing="false" onAction="#addNewEvent" prefHeight="58.0" prefWidth="136.0" text="Add New Event" />
+      <Button layoutX="196.0" layoutY="129.0" mnemonicParsing="false" onAction="#addSpeaker" prefHeight="58.0" prefWidth="136.0" text="Add Speaker" />
+      <Button layoutX="346.0" layoutY="129.0" mnemonicParsing="false" onAction="#changeEventTime" prefHeight="58.0" prefWidth="136.0" text="Change Event Time" />
+      <Button layoutX="502.0" layoutY="129.0" mnemonicParsing="false" onAction="#seeWhoJoinedEvent" prefHeight="58.0" prefWidth="136.0" text="See Who Joined Event" />
+      <Button layoutX="40.0" layoutY="212.0" mnemonicParsing="false" onAction="#sendNewstoVisitors" prefHeight="58.0" prefWidth="136.0" text="Send News to Visitors" />
+      <Button layoutX="190.0" layoutY="212.0" mnemonicParsing="false" onAction="#talkwithStallOwners" prefHeight="58.0" prefWidth="136.0" text="Talk with Stall Owners" />
+      <Button layoutX="337.0" layoutY="212.0" mnemonicParsing="false" onAction="#checkVisitorFeedback" prefHeight="58.0" prefWidth="145.0" text="Check Visitor Feedback" />
+      <Button layoutX="502.0" layoutY="212.0" mnemonicParsing="false" onAction="#cancelanEvent" prefHeight="58.0" prefWidth="136.0" text="Cancel an Event" />
+      <Button layoutX="522.0" layoutY="419.0" mnemonicParsing="false" onAction="#logOut" prefHeight="58.0" prefWidth="136.0" text="Log Out" />
+   </children>
+</AnchorPane>
