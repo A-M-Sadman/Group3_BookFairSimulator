@@ -41,6 +41,27 @@ public class RecordPurchaseController
 
     @javafx.fxml.FXML
     public void record(ActionEvent actionEvent) {
+        if (bookList.isEmpty()){
+            recordLabel.setText("There is no book to sell");
+            return;
+        }
+        if ((quantityToSell.getText().isEmpty()) || (Integer.parseInt(quantityToSell.getText()) < 1)){
+            recordLabel.setText("Enter a positive integer number as quantity");
+            return;
+        }
+        int q = Integer.parseInt(quantityToSell.getText());
+        Book book = bookTableView.getSelectionModel().getSelectedItem();
+        if (book == null){
+            recordLabel.setText("Select a book from the list");
+        }
+        if (q > book.getQuantity()){
+            recordLabel.setText("The stock is insufficient!");
+            return;
+        }
+        book.setQuantity(book.getQuantity() - q);
+        book.setTotalSales(book.getTotalSales() + q);
+        recordLabel.setText("Total price is: " + book.getPrice()*q + "\n" + "Recorded to the inventory successfully!");
+        bookTableView.refresh();
     }
 
     @javafx.fxml.FXML

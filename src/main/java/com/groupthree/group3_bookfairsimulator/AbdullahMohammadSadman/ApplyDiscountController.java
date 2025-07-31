@@ -28,7 +28,7 @@ public class ApplyDiscountController
     @javafx.fxml.FXML
     private TableColumn<Book, Double> priceCol;
     @javafx.fxml.FXML
-    private TableView bookTableView;
+    private TableView<Book> bookTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -41,6 +41,35 @@ public class ApplyDiscountController
 
     @javafx.fxml.FXML
     public void apply(ActionEvent actionEvent) {
+        if (bookList.isEmpty()){
+            applyLabel.setText("There is no book to apply discount");
+            return;
+        }
+        double d = Double.parseDouble(discountInput.getText());
+        Book book = bookTableView.getSelectionModel().getSelectedItem();
+        if (book == null){
+            applyLabel.setText("Please select a book from the table!");
+            return;
+        }
+
+        if ((discountInput.getText().isEmpty()) || (d < 0)) {
+            applyLabel.setText("Enter a positive number to apply discount");
+            return;
+        }
+
+        if (book.getQuantity() == 0) {
+            applyLabel.setText("Book is not available now!");
+            return;
+        }
+
+        double p = book.getPrice() - (book.getPrice() * (d / 100));
+        book.setPrice(p);
+//        bookTableView.getItems().clear();
+//        bookTableView.getItems().addAll(bookList);
+        bookTableView.refresh();
+
+        applyLabel.setText("Applied discount successfully");
+
     }
 
     @javafx.fxml.FXML

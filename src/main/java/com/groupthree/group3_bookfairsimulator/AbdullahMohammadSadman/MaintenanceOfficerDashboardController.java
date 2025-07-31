@@ -46,7 +46,11 @@ public class MaintenanceOfficerDashboardController
     }
 
     @javafx.fxml.FXML
-    public void checkSchedule(ActionEvent actionEvent) {
+    public void checkSchedule(ActionEvent actionEvent) throws IOException {
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/CheckSchedule.fxml"));
+        Scene scene = new Scene(root);
+        HelloApplication.stage.setTitle("Make Schedule");
+        HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
