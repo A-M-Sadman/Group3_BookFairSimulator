@@ -50,6 +50,9 @@ public class UpdatePriceController
 
     @javafx.fxml.FXML
     public void updatePrice(ActionEvent actionEvent) {
+        if (bookList.isEmpty()){
+            updatePriceLabel.setText("There is no book to update price!");
+        }
         Book book = bookTableView.getSelectionModel().getSelectedItem();
         if ((bookTableView.getSelectionModel().getSelectedItems()) == null){
             updatePriceLabel.setText("Please select a book from the table!");
