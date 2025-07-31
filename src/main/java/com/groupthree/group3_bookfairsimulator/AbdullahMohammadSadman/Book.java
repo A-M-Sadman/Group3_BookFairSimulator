@@ -9,14 +9,14 @@ public class Book {
     private int quantity;
     private String genre;
 
-    private int totalSales;
+    private static int totalSales;
 
-    public int getTotalSales() {
+    public static int getTotalSales() {
         return totalSales;
     }
 
     public void setTotalSales(int totalSales) {
-        this.totalSales = totalSales;
+        Book.totalSales = totalSales;
     }
 
     protected static ArrayList<Book> bookList = new ArrayList<>();
