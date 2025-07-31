@@ -9,6 +9,16 @@ public class Book {
     private int quantity;
     private String genre;
 
+    private int totalSales;
+
+    public int getTotalSales() {
+        return totalSales;
+    }
+
+    public void setTotalSales(int totalSales) {
+        this.totalSales = totalSales;
+    }
+
     protected static ArrayList<Book> bookList = new ArrayList<>();
 
     public Book() {

@@ -53,14 +53,16 @@ public class UpdatePriceController
         if (bookList.isEmpty()){
             updatePriceLabel.setText("There is no book to update price!");
         }
+
         Book book = bookTableView.getSelectionModel().getSelectedItem();
-        if ((bookTableView.getSelectionModel().getSelectedItems()) == null){
-            updatePriceLabel.setText("Please select a book from the table!");
-            return;
-        }
 
         if ((newPriceInput.getText().isEmpty()) || (Double.parseDouble(newPriceInput.getText()) < 0)) {
             updatePriceLabel.setText("Enter a positive number as price!");
+            return;
+        }
+
+        if ((bookTableView.getSelectionModel().getSelectedItems()) == null){
+            updatePriceLabel.setText("Please select a book from the table!");
             return;
         }
 
