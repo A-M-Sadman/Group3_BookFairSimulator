@@ -20,6 +20,7 @@ public class ViewSalesController
 
     @javafx.fxml.FXML
     public void showTotalSales(ActionEvent actionEvent) {
+        messageLabel.setText("Total books sold: " + Book.getTotalSales());
     }
 
     @javafx.fxml.FXML

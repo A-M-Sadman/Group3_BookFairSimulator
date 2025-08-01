@@ -45,5 +45,15 @@ public class CheckStockController
 
     @javafx.fxml.FXML
     public void showStock(ActionEvent actionEvent) {
+        if (bookList.isEmpty()) {
+            showStockLabel.setText("There is no book available");
+            return;
+        }
+        Book book = bookTableView.getSelectionModel().getSelectedItem();
+        if (book == null){
+            showStockLabel.setText("Select a book from table");
+            return;
+        }
+        showStockLabel.setText("Stock for " + book.getTitle() + ": " + book.getQuantity());
     }
 }
