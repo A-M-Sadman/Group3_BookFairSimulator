@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book.bookList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.Event.eventList;
 
 public class AddNewEventController
 {
@@ -37,7 +38,7 @@ public class AddNewEventController
             lable.setText("Please fill-up all the input fields!");
             return;
         }
-        for (Book b : bookList){
+        for (Event b : eventList){
             if ((b.getLocation().equals(eventLocation.getText())) && (b.getTime().equals(eventTimeTextFild.getText())) && b.getDate().equals(datepicker.getValue())){
                 lable.setText("Same Date and Same Location another ");
                 return;
