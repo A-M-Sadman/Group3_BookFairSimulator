@@ -1,7 +1,5 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
-import javafx.scene.control.DatePicker;
-
 import java.util.ArrayList;
 
 public class Book {
@@ -10,22 +8,18 @@ public class Book {
     private double price;
     private int quantity;
     private String genre;
-    private DatePicker date;
-    private String time;
-    private String location;
 
-    public Book(String title, String author, double price, int quantity, String genre, DatePicker date, String time, String location) {
-        this.title = title;
-        this.author = author;
-        this.price = price;
-        this.quantity = quantity;
-        this.genre = genre;
-        this.date = date;
-        this.time = time;
-        this.location = location;
+    private static int totalSales;
+
+    public static int getTotalSales() {
+        return totalSales;
     }
 
-    public static ArrayList<Book> bookList = new ArrayList<>();
+    public void setTotalSales(int totalSales) {
+        Book.totalSales = totalSales;
+    }
+
+    protected static ArrayList<Book> bookList = new ArrayList<>();
 
     public Book() {
     }
@@ -36,38 +30,6 @@ public class Book {
         this.price = price;
         this.quantity = quantity;
         this.genre = genre;
-    }
-
-    public DatePicker getDate() {
-        return date;
-    }
-
-    public void setDate(DatePicker date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public static ArrayList<Book> getBookList() {
-        return bookList;
-    }
-
-    public static void setBookList(ArrayList<Book> bookList) {
-        Book.bookList = bookList;
     }
 
     public String getTitle() {
@@ -118,9 +80,6 @@ public class Book {
                 ", price=" + price +
                 ", quantity=" + quantity +
                 ", genre='" + genre + '\'' +
-                ", date=" + date +
-                ", time='" + time + '\'' +
-                ", location='" + location + '\'' +
                 '}';
     }
 }
