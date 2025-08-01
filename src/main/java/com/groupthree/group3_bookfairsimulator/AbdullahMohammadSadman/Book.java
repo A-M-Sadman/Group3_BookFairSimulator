@@ -19,7 +19,8 @@ public class Book {
         Book.totalSales = totalSales;
     }
 
-    protected static ArrayList<Book> bookList = new ArrayList<>();
+    public static ArrayList<Book> bookList = new ArrayList<>();
+    public static ArrayList<Book> favBooklist = new ArrayList<>();
 
     public Book() {
     }
