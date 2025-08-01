@@ -55,7 +55,7 @@ public class LoginController
             HelloApplication.stage.setTitle("Publisher Dashboard");
             HelloApplication.stage.setScene(scene);
 
-        } else if ((userInput.getValue().equals("Stall Owner")) && (passInput.getText().equals("2330322"))){
+        } else if ((userInput.getValue().equals("Stall Owner")) && (passInput.getText().equals("12345"))){
             AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/StallOwnerDashboard.fxml"));
             Scene scene = new Scene(root);
             HelloApplication.stage.setTitle("Stall Owner Dashboard");
@@ -83,7 +83,12 @@ public class LoginController
             AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/visitor.fxml"));
             Scene scene = new Scene(root);
             HelloApplication.stage.setScene(scene);
-        }else {
+        }
+        else if ((userInput.getValue().equals("Event Manager")) && (passInput.getText().equals("12345"))){
+            AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/EventManager.fxml"));
+            Scene scene = new Scene(root);
+            HelloApplication.stage.setScene(scene);}
+        else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Invalid credentials");

@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupthree.group3_bookfairsimulator.Reya.SecurityOfficerDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.SecurityOfficerDashboardController">
+   <children>
+      <AnchorPane layoutX="1.0" prefHeight="104.0" prefWidth="600.0" style="-fx-background-color: aqua;">
+         <children>
+            <Text layoutX="173.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Secqurity Officer">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button layoutX="295.0" layoutY="258.0" mnemonicParsing="false" onAction="#emergencyDrillButton" prefHeight="29.0" prefWidth="202.0" text="Emergency Drill">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="131.0" mnemonicParsing="false" onAction="#realTimeButton" text="Real Time Survillance">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="258.0" mnemonicParsing="false" onAction="#assignDutyButton" prefHeight="29.0" prefWidth="159.0" text="Assign Duty">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="212.0" mnemonicParsing="false" onAction="#incidentReportButton" prefHeight="29.0" prefWidth="159.0" text="Incident Report">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="296.0" layoutY="212.0" mnemonicParsing="false" onAction="#manageSequrityClearenceButton" text="Manage Sequrity Clearence">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="174.0" mnemonicParsing="false" onAction="#visitorEntryButton" prefHeight="29.0" prefWidth="159.0" text="Visitor Entry">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="297.0" layoutY="170.0" mnemonicParsing="false" onAction="#activeAlermButton" prefHeight="29.0" prefWidth="202.0" text="Active Alerm">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="296.0" layoutY="131.0" mnemonicParsing="false" onAction="#accessSequrityButton" prefHeight="29.0" prefWidth="202.0" text="Access Sequrity Logs">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

@@ -4,7 +4,7 @@ import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,12 +13,31 @@ public class JoinEventController
 {
     @javafx.fxml.FXML
     private Label lable;
+    @javafx.fxml.FXML
+    private TableColumn tableTime;
+    @javafx.fxml.FXML
+    private TableColumn tableEvantName;
+    @javafx.fxml.FXML
+    private TableColumn tableLocation;
+    @javafx.fxml.FXML
+    private TextField eventTimeTextfild;
+    @javafx.fxml.FXML
+    private TableView tableviwe;
+    @javafx.fxml.FXML
+    private TextField eventNameTextfild;
+    @javafx.fxml.FXML
+    private DatePicker datepicker;
+    @javafx.fxml.FXML
+    private TableColumn tableDate;
+    @javafx.fxml.FXML
+    private TextField eventLocationTextfild;
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void myEvent(ActionEvent actionEvent) {
     }
 

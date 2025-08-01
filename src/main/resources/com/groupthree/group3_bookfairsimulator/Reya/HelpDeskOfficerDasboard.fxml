@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupthree.group3_bookfairsimulator.Reya.HelpDeskOfficerDasboardController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="476.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.HelpDeskOfficerDasboardController">
+   <children>
+      <AnchorPane prefHeight="111.0" prefWidth="628.0" style="-fx-background-color: aqua;">
+         <children>
+            <Text layoutX="165.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Help Desk Officer">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button layoutX="36.0" layoutY="140.0" mnemonicParsing="false" onAction="#provideDirectionButton" prefHeight="29.0" prefWidth="153.0" text="Provide Direction">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="269.0" layoutY="271.0" mnemonicParsing="false" onAction="#eventScheduleUpdate" prefHeight="29.0" prefWidth="198.0" text="Event Schedule Update">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="269.0" layoutY="223.0" mnemonicParsing="false" onAction="#volunteerCoordinateButton" prefHeight="29.0" prefWidth="198.0" text="Volunteer Coordination">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="269.0" layoutY="178.0" mnemonicParsing="false" onAction="#officerLoginButton" prefHeight="29.0" prefWidth="198.0" text="Officer LogIn">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="269.0" layoutY="140.0" mnemonicParsing="false" onAction="#coorDinateButton" text="CoorDinate With Organizer">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="32.0" layoutY="271.0" mnemonicParsing="false" onAction="#visitorFeedBackButton" prefHeight="29.0" prefWidth="162.0" text="Visitor Feedback">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="36.0" layoutY="223.0" mnemonicParsing="false" onAction="#dailyReportButton" prefHeight="29.0" prefWidth="153.0" text="Daily Report">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="34.0" layoutY="178.0" mnemonicParsing="false" onAction="#lostandFoundButton" prefHeight="29.0" prefWidth="153.0" text="Lost and Found">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

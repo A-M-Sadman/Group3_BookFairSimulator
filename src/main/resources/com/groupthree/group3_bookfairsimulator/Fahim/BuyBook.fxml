@@ -11,12 +11,11 @@
 
 <AnchorPane prefHeight="443.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.BuyBookController">
    <children>
-      <TableView layoutX="23.0" layoutY="84.0" prefHeight="207.0" prefWidth="411.0">
+      <TableView fx:id="tableviwe" layoutX="23.0" layoutY="84.0" prefHeight="207.0" prefWidth="411.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Title" />
-          <TableColumn prefWidth="75.0" text="Author" />
-            <TableColumn prefWidth="75.0" text="Publisher" />
-            <TableColumn prefWidth="75.0" text="Price" />
+          <TableColumn fx:id="titlecol" prefWidth="75.0" text="Title" />
+          <TableColumn fx:id="authorcol" prefWidth="75.0" text="Author" />
+            <TableColumn fx:id="pricecol" prefWidth="75.0" text="Price" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -27,11 +26,9 @@
             <Font size="29.0" />
          </font>
       </Text>
-      <Button layoutX="534.0" layoutY="84.0" mnemonicParsing="false" onAction="#cart" prefHeight="30.0" prefWidth="79.0" text="Cart" />
-      <Label fx:id="cartlable" layoutX="442.0" layoutY="122.0" prefHeight="49.0" prefWidth="247.0" />
-      <Button layoutX="442.0" layoutY="222.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="30.0" prefWidth="79.0" text="Check Out" />
-      <ComboBox layoutX="439.0" layoutY="181.0" prefHeight="30.0" prefWidth="191.0" promptText="Select Payment Mathod" />
-      <Label layoutX="442.0" layoutY="267.0" onDragDetected="#checkoutlable" prefHeight="49.0" prefWidth="247.0" />
+      <Button layoutX="453.0" layoutY="215.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="30.0" prefWidth="79.0" text="Check Out" />
+      <ComboBox fx:id="combobox" layoutX="448.0" layoutY="173.0" prefHeight="30.0" prefWidth="191.0" promptText="Select Payment Mathod" />
+      <Label fx:id="lable" layoutX="442.0" layoutY="267.0" prefHeight="49.0" prefWidth="247.0" />
       <Button layoutX="342.0" layoutY="376.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="79.0" text="&lt; Back" />
       <Button layoutX="442.0" layoutY="376.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="30.0" prefWidth="101.0" text="&lt;&lt; Dashbord" />
       <Button layoutX="566.0" layoutY="376.0" mnemonicParsing="false" onAction="#next" prefHeight="30.0" prefWidth="79.0" text="Next &gt;" />
