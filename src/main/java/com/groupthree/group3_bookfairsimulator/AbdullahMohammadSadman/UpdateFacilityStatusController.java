@@ -47,6 +47,7 @@ public class UpdateFacilityStatusController
     public void update(ActionEvent actionEvent) {
         Facility facility = new Facility(facilityInput.getValue(), statusInput.getValue());
         facilityList.add(facility);
+        facilityTableView.getItems().clear();
         facilityTableView.getItems().addAll(facilityList);
     }
 }

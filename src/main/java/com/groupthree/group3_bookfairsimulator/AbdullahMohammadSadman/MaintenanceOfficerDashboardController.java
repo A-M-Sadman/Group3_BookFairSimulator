@@ -55,7 +55,7 @@ public class MaintenanceOfficerDashboardController
 
     @javafx.fxml.FXML
     public void reportATechnicalIssue(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/ReportATechnicalIssue.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("AbdullahMohammadSadman/ReportTechnicalIssue.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Technical Issue");
         HelloApplication.stage.setScene(scene);
