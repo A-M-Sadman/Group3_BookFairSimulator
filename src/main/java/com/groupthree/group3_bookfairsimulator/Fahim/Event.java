@@ -17,6 +17,7 @@ public class Event {
         this.location = location;
     }
     public static ArrayList<Event> eventList = new ArrayList<>();
+    public static ArrayList<Event> joinList = new ArrayList<>();
 
     public Event() {
     }

@@ -22,13 +22,13 @@ public class CancelanEventController
     @javafx.fxml.FXML
     private TableColumn titlecoloum;
     @javafx.fxml.FXML
-    private TableColumn location;
-    @javafx.fxml.FXML
     private DatePicker datepicker;
     @javafx.fxml.FXML
     private ComboBox combobox;
     @javafx.fxml.FXML
     private TableColumn datecoloum;
+    @javafx.fxml.FXML
+    private TableColumn locationcol;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -54,5 +54,9 @@ public class CancelanEventController
         AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/CheckVisitorFeedback.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void cancelEvent(ActionEvent actionEvent) {
     }
 }

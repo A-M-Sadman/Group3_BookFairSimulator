@@ -30,7 +30,7 @@
       </Text>
       <TextField fx:id="eventNameTextfild" layoutX="33.0" layoutY="37.0" promptText="Event Name" />
       <DatePicker fx:id="datepicker" layoutX="33.0" layoutY="76.0" prefHeight="25.0" prefWidth="149.0" promptText="Event Date" />
-      <Button layoutX="217.0" layoutY="108.0" mnemonicParsing="false" onAction="#join" prefHeight="36.0" prefWidth="113.0" text="Join" />
+      <Button layoutX="217.0" layoutY="108.0" mnemonicParsing="false" onAction="#join" prefHeight="36.0" prefWidth="113.0" text="Join Filter" />
       <Label fx:id="lable" layoutX="33.0" layoutY="211.0" prefHeight="36.0" prefWidth="355.0" />
       <Button layoutX="403.0" layoutY="521.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="113.0" text="&lt; Back" />
       <Button layoutX="543.0" layoutY="521.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="36.0" prefWidth="113.0" text="&lt;&lt; Dashbord" />

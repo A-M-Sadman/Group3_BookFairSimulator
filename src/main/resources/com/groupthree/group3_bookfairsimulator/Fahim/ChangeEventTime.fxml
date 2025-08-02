@@ -7,39 +7,42 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="655.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.ChangeEventTimeController">
+<AnchorPane prefHeight="722.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.ChangeEventTimeController">
    <children>
-      <Text layoutX="228.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Event Time ">
+      <Text layoutX="293.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change Event Time ">
          <font>
             <Font size="29.0" />
          </font>
       </Text>
-      <TextField layoutX="35.0" layoutY="95.0" text="New Event Name " />
-      <TextField layoutX="35.0" layoutY="131.0" text="New Event Time " />
-      <TextField layoutX="35.0" layoutY="190.0" text="New Event Location" />
-      <DatePicker layoutX="35.0" layoutY="230.0" prefHeight="25.0" prefWidth="149.0" promptText="New Event Date " />
-      <Label layoutX="35.0" layoutY="276.0" prefHeight="52.0" prefWidth="476.0" text="Label" />
-      <RadioButton layoutX="36.0" layoutY="165.0" mnemonicParsing="false" text="AM" />
-      <RadioButton layoutX="90.0" layoutY="165.0" mnemonicParsing="false" text="PM" />
-      <Button layoutX="206.0" layoutY="223.0" mnemonicParsing="false" onAction="#change" prefHeight="39.0" prefWidth="87.0" text="Change " />
-      <Button layoutX="384.0" layoutY="592.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="87.0" text="&lt; Back " />
-      <Button layoutX="492.0" layoutY="592.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="39.0" prefWidth="99.0" text="&lt;&lt; DashBord" />
-      <Button layoutX="609.0" layoutY="592.0" mnemonicParsing="false" onAction="#next" prefHeight="39.0" prefWidth="87.0" text="Next &gt;" />
-      <TableView layoutX="22.0" layoutY="340.0" prefHeight="242.0" prefWidth="669.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Event Name " />
-          <TableColumn prefWidth="75.0" text="Event Time " />
-            <TableColumn prefWidth="75.0" text="Event Location " />
-            <TableColumn prefWidth="75.0" text="Event Date" />
-        </columns>
+      <Label fx:id="lable" layoutX="68.0" layoutY="335.0" prefHeight="52.0" prefWidth="476.0" />
+      <Button layoutX="325.0" layoutY="242.0" mnemonicParsing="false" onAction="#change" prefHeight="58.0" prefWidth="168.0" text="Change " />
+      <Button layoutX="502.0" layoutY="669.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="87.0" text="&lt; Back " />
+      <Button layoutX="610.0" layoutY="669.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="39.0" prefWidth="99.0" text="&lt;&lt; DashBord" />
+      <Button layoutX="727.0" layoutY="669.0" mnemonicParsing="false" onAction="#next" prefHeight="39.0" prefWidth="87.0" text="Next &gt;" />
+      <TableView fx:id="tableview1" layoutX="74.0" layoutY="397.0" prefHeight="242.0" prefWidth="669.0">
+         <columns>
+            <TableColumn fx:id="namecol1" prefWidth="75.0" text="Event Name " />
+            <TableColumn fx:id="timecol1" prefWidth="75.0" text="Event Time " />
+            <TableColumn fx:id="locationcol1" prefWidth="75.0" text="Event Location " />
+            <TableColumn fx:id="datecol1" prefWidth="75.0" text="Event Date" />
+         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <TextField fx:id="name" layoutX="42.0" layoutY="77.0" promptText="Event Name" />
+      <TextField fx:id="time" layoutX="42.0" layoutY="118.0" promptText="Event Time" />
+      <TextField fx:id="eventlocation" layoutX="42.0" layoutY="182.0" promptText="Location" />
+      <RadioButton fx:id="am" layoutX="42.0" layoutY="153.0" mnemonicParsing="false" text="AM">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleTime" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="pm" layoutX="97.0" layoutY="153.0" mnemonicParsing="false" text="PM" toggleGroup="$toggleTime" />
+      <DatePicker fx:id="datepicker" layoutX="37.0" layoutY="217.0" prefHeight="25.0" prefWidth="159.0" promptText="Event Date " />
    </children>
 </AnchorPane>
