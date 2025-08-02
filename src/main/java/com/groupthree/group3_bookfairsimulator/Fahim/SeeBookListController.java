@@ -54,16 +54,11 @@ public class SeeBookListController
     @javafx.fxml.FXML
     public void addFavorite(ActionEvent actionEvent) {
         Book x = bookTableViwe.getSelectionModel().getSelectedItem();
+        if (x == null) {
+            lable.setText("Please select a book to add to favorites.");
+            return;}
         favBooklist.add(x);
-        lable.setText("Favorit Book added");
-    }
-
-    @Deprecated
-    public void buyBook(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/BuyBook.fxml"));
-        Scene scene = new Scene(root);
-        HelloApplication.stage.setScene(scene);
-
+        lable.setText(x.getTitle() + " added to Favorites.");
     }
 
     @javafx.fxml.FXML

@@ -5,9 +5,7 @@ import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -27,23 +25,53 @@ public class AddNewEventController
     private Label lable;
     @javafx.fxml.FXML
     private DatePicker datepicker;
+    @javafx.fxml.FXML
+    private RadioButton am;
+    @javafx.fxml.FXML
+    private RadioButton pm;
+    @javafx.fxml.FXML
+    private ToggleGroup time;
 
     @javafx.fxml.FXML
     public void initialize() {
+        am.setToggleGroup(time);
+        pm.setToggleGroup(time);
     }
 
     @javafx.fxml.FXML
     public void addNewEvent(ActionEvent actionEvent) {
-        if ((eventTitleTextfild.getText().isEmpty()) || (eventLocation.getText().isEmpty()) || (eventTimeTextFild.getText().isEmpty()) || (datepicker.getValue() == null)){
+        if ((eventTitleTextfild.getText().isEmpty()) ||
+                (eventLocation.getText().isEmpty()) ||
+                (eventTimeTextFild.getText().isEmpty()) ||
+                (datepicker.getValue() == null)) {
+
             lable.setText("Please fill-up all the input fields!");
             return;
         }
-        for (Event b : eventList){
-            if ((b.getLocation().equals(eventLocation.getText())) && (b.getTime().equals(eventTimeTextFild.getText())) && b.getDate().equals(datepicker.getValue())){
-                lable.setText("Same Date and Same Location another ");
+        String time = eventTimeTextFild.getText();
+        if (pm.isSelected()) {
+            time += " PM";
+        } else if (am.isSelected()) {
+            time += " AM";
+        }
+        for (Event b : eventList) {
+            if ((b.getLocation().equals(eventLocation.getText())) &&
+                    (b.getTime().equals(time)) &&
+                    b.getDate().equals(datepicker.getValue())) {
+
+                lable.setText("Same Date, Time and Location already exists!");
                 return;
             }
-    }}
+        }
+        Event b = new Event(
+                eventTitleTextfild.getText(),
+                datepicker.getValue(),
+                time,
+                eventLocation.getText()
+        );
+        eventList.add(b);
+        lable.setText("Event successfully added!");
+    }
 
     @javafx.fxml.FXML
     public void next(ActionEvent actionEvent) throws IOException {

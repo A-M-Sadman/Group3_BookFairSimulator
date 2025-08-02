@@ -8,7 +8,7 @@ public class Event {
     private LocalDate date;
     private String time;
     private String location;
-    public static ArrayList<Event> eventList = new ArrayList();
+
 
     public Event(String title, LocalDate date, String time, String location) {
         this.title = title;
@@ -16,8 +16,12 @@ public class Event {
         this.time = time;
         this.location = location;
     }
+    public static ArrayList<Event> eventList = new ArrayList<>();
 
     public Event() {
+    }
+
+    public static void add(Event b) {
     }
 
     public String getTitle() {
