@@ -35,6 +35,10 @@ public class CheckScheduleController
     private DatePicker dateInput;
     @javafx.fxml.FXML
     private Label assignDutyLabel;
+    @javafx.fxml.FXML
+    private TableColumn taskCol1;
+    @javafx.fxml.FXML
+    private TableColumn zoneCol1;
 
     @javafx.fxml.FXML
     public void initialize() {
