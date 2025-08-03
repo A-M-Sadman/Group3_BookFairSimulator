@@ -92,7 +92,7 @@ public class JoinEventController
             lable.setText("Please select an event from the table.");
             return;
         }
-        if (!joinList.contains(tableviwe.getSelectionModel().getSelectedItem())) {
+        if (joinList.contains(tableviwe.getSelectionModel().getSelectedItem())) {
             lable.setText("You have already joined: " + (tableviwe.getSelectionModel().getSelectedItem()).getTitle());
             return;
 
