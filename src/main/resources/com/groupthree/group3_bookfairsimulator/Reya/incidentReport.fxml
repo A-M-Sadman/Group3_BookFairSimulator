@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupthree.group3_bookfairsimulator.Reya.IncidentReport"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="548.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.IncidentReport">
+   <children>
+      <ComboBox fx:id="IncidentCombox" layoutX="31.0" layoutY="203.0" prefWidth="150.0" promptText="Incident Dropdown" />
+      <DatePicker fx:id="datePicker" layoutX="31.0" layoutY="248.0" />
+      <Text layoutX="234.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incident Report ">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="locationTextField" layoutX="31.0" layoutY="299.0" promptText="Location " />
+      <TableView fx:id="tableview" layoutX="450.0" layoutY="124.0" prefHeight="299.0" prefWidth="299.0">
+        <columns>
+          <TableColumn fx:id="incidentCombo" prefWidth="131.99996948242188" text="Incident Dropdown" />
+          <TableColumn fx:id="dateCombo" prefWidth="77.60003662109375" text="Date" />
+            <TableColumn fx:id="locationCombo" prefWidth="88.80010986328125" text="Location" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="textArea" layoutX="224.0" layoutY="334.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="incidentIDTextField" layoutX="32.0" layoutY="164.0" promptText="incident ID" />
+   </children>
 </AnchorPane>
