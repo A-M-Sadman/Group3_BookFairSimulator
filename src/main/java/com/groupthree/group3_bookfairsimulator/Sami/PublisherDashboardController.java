@@ -39,4 +39,8 @@ public class PublisherDashboardController
     @javafx.fxml.FXML
     public void visitorComplaints(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void logOutButton(ActionEvent actionEvent) {
+    }
 }
