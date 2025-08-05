@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import static com.groupthree.group3_bookfairsimulator.Fahim.Event.eventList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.Event.joinList;
 
 public class JoinEventController
 {
@@ -82,15 +83,21 @@ public class JoinEventController
     public void Reset(ActionEvent actionEvent) {
         eventNameTextfild.clear();
         tableviwe.getItems().setAll(eventList);
+        lable.setText("");
     }
 
     @javafx.fxml.FXML
     public void joinTable(ActionEvent actionEvent) {
-        Event selected = tableviwe.getSelectionModel().getSelectedItem();
-        if (selected == null) {
+        if (tableviwe.getSelectionModel().getSelectedItem() == null) {
             lable.setText("Please select an event from the table.");
             return;
         }
-        lable.setText("You have joined: " + selected.getTitle());
+        if (joinList.contains(tableviwe.getSelectionModel().getSelectedItem())) {
+            lable.setText("You have already joined: " + (tableviwe.getSelectionModel().getSelectedItem()).getTitle());
+            return;
+
+        }
+        joinList.add(tableviwe.getSelectionModel().getSelectedItem());
+        lable.setText("You have joined: " + tableviwe.getSelectionModel().getSelectedItem().getTitle());
     }
 }
