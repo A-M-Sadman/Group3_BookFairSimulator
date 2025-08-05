@@ -106,6 +106,11 @@ public class CheckScheduleController
             notifyStaffLabel.setText("Assign a task to nofity!");
             return;
         }
+        Task t = taskTableView.getSelectionModel().getSelectedItem();
+        if (t == null) {
+            notifyStaffLabel.setText("Select a staff to notify from the table!");
+            return;
+        }
         notifyStaffLabel.setText("Notified staff: " + staffNameInput.getValue());
     }
 }
