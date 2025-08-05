@@ -23,4 +23,8 @@ public class PromotionalSupportController
     @javafx.fxml.FXML
     public void submitRequestButton(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
+    }
 }
