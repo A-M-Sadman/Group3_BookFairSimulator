@@ -111,6 +111,6 @@ public class CheckScheduleController
             notifyStaffLabel.setText("Select a staff to notify from the table!");
             return;
         }
-        notifyStaffLabel.setText("Notified staff: " + staffNameInput.getValue());
+        notifyStaffLabel.setText("Notified staff: " + t.getTaskName());
     }
 }

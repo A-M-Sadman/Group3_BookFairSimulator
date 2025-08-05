@@ -1,5 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.Reya;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+
 public class VisitorFeddback
 {
     @javafx.fxml.FXML
