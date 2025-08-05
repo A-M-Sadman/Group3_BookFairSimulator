@@ -16,65 +16,65 @@ public class PublisherDashboardController
 
     @javafx.fxml.FXML
     public void stallResevationButton(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/stallResevationButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("Stall Reservation  Done");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void logisticButton(ActionEvent actionEvent) throws IOException{
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/logisticButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void updatePublisherButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/updatePublisherButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("Publisher Update Done");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void uploadBookButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/uploadBookButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("Book Upload Done");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void visitorInqueryButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/visitorInqueryButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("FAQ");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void cancelStallBookingButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/cancelStallBookingButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void trackSaleButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/trackSaleButton.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
     }
 
     @javafx.fxml.FXML
     public void visitorComplaints(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/visitorComplaints.fxml"));
         Scene scene = new Scene(root);
-        HelloApplication.stage.setTitle("Book Listing Done");
+        HelloApplication.stage.setTitle("FAQ");
         HelloApplication.stage.setScene(scene);
     }
 
