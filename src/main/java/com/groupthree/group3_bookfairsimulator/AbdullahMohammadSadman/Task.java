@@ -1,16 +1,17 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Task {
     private String taskName;
     private String description;
-    private int zone;
+    private String zone;
     private String status;
     private String type;
-    private String date;
+    private LocalDate date;
 
-    public Task(String taskName, String description, int zone, String status, String type, String date) {
+    public Task(String taskName, String description, String zone, String status, String type, LocalDate date) {
         this.taskName = taskName;
         this.description = description;
         this.zone = zone;
@@ -40,11 +41,11 @@ public class Task {
         this.description = description;
     }
 
-    public int getZone() {
+    public String getZone() {
         return zone;
     }
 
-    public void setZone(int zone) {
+    public void setZone(String zone) {
         this.zone = zone;
     }
 
@@ -64,11 +65,11 @@ public class Task {
         this.type = type;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
