@@ -58,6 +58,8 @@ public class CheckScheduleController
         staffNameInput.getItems().addAll("Mokhles", "Joshim", "Masud", "Rasel");
         typeInput.getItems().addAll("Cleaning", "Repair", "Inspection", "Upgrade");
         zoneInput.getItems().addAll("Zone 1", "Zone 2", "Zone 3", "Zone 4");
+
+        taskTableView.getItems().addAll(taskList);
     }
 
     @javafx.fxml.FXML
