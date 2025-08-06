@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Sami.CancelStallBookingController">
+<AnchorPane onDragDetected="#backButton" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Sami.CancelStallBookingController">
    <children>
       <Text layoutX="144.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cancel Stall Booking">
          <font>
@@ -19,7 +19,6 @@
       <TextField fx:id="stallNumberTextField" layoutX="30.0" layoutY="161.0" promptText="Stall ID" />
       <ComboBox fx:id="statusCombobox" layoutX="30.0" layoutY="200.0" prefWidth="150.0" promptText="Status" />
       <Button layoutX="274.0" layoutY="269.0" mnemonicParsing="false" onAction="#cancelButton" text="Cancel" />
-      <Button layoutX="53.0" layoutY="16.0" mnemonicParsing="false" text="Button" />
       <Button layoutX="521.0" layoutY="338.0" mnemonicParsing="false" text="back" />
    </children>
 </AnchorPane>
