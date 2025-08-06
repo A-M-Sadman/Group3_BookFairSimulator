@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupthree.group3_bookfairsimulator.Reya.ActiveAlems"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="550.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.ActiveAlems">
+   <children>
+      <Text layoutX="268.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alarm">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <TextField fx:id="alarmIdtetField" layoutX="58.0" layoutY="152.0" promptText="Alarm ID" />
+      <TextField fx:id="locationTextfield" layoutX="59.0" layoutY="236.0" promptText="Location" />
+      <DatePicker fx:id="datePICKER" layoutX="59.0" layoutY="275.0" />
+      <Button layoutX="95.0" layoutY="332.0" mnemonicParsing="false" onAction="#startAlerm" text="Start Alerm" />
+      <ComboBox fx:id="incidentTypeXombo" layoutX="58.0" layoutY="195.0" prefWidth="150.0" promptText="Incident Type" />
+      <TableView layoutX="274.0" layoutY="179.0" prefHeight="306.0" prefWidth="353.0">
+        <columns>
+          <TableColumn fx:id="alarmId" prefWidth="75.0" text="Alarm ID" />
+          <TableColumn fx:id="incidentTypeCol" prefWidth="95.20001220703125" text="Incident Type" />
+            <TableColumn fx:id="locationCol" prefWidth="55.199951171875" text="Location" />
+            <TableColumn fx:id="dateCol" prefWidth="127.20003662109377" text="Date" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
