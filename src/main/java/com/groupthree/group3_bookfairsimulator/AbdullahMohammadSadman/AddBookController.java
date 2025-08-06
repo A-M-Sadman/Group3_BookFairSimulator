@@ -45,13 +45,15 @@ public class AddBookController
 
     @javafx.fxml.FXML
     public void addBook(ActionEvent actionEvent) {
+//        How to add a book when stock is not empty
+
         if ((titleInput.getText().isEmpty()) || (authorInput.getText().isEmpty()) || (priceInput.getText().isEmpty()) || (quantityInput.getText().isEmpty()) || (genreInput.getValue() == null)){
             addBookLabel.setText("Please fill-up all the input fields!");
             return;
         }
 
         for (Book b : bookList){
-            if ((b.getTitle().equals(titleInput.getText())) && (b.getAuthor().equals(authorInput.getText()))){
+            if ((b.getTitle().equals(titleInput.getText())) && (b.getAuthor().equals(authorInput.getText())) && (b.getQuantity() != 0)){
                 addBookLabel.setText("Book already exists in the inventory!");
                 return;
             }

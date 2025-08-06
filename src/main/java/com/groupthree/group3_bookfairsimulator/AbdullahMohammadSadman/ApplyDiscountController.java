@@ -45,15 +45,22 @@ public class ApplyDiscountController
             applyLabel.setText("There is no book to apply discount");
             return;
         }
-        double d = Double.parseDouble(discountInput.getText());
+
         Book book = bookTableView.getSelectionModel().getSelectedItem();
         if (book == null){
             applyLabel.setText("Please select a book from the table!");
             return;
         }
 
-        if ((discountInput.getText().isEmpty()) || (d < 0)) {
-            applyLabel.setText("Enter a positive number to apply discount");
+        if ((discountInput.getText().isEmpty())) {
+            applyLabel.setText("Enter a number to apply discount");
+            return;
+        }
+
+        double d = Double.parseDouble(discountInput.getText());
+
+        if (d < 0) {
+            applyLabel.setText("Please enter a positive number!");
             return;
         }
 

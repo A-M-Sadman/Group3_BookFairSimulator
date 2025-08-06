@@ -53,6 +53,7 @@ public class RecordPurchaseController
         Book book = bookTableView.getSelectionModel().getSelectedItem();
         if (book == null){
             recordLabel.setText("Select a book from the list");
+            return;
         }
         if (q > book.getQuantity()){
             recordLabel.setText("The stock is insufficient!");
