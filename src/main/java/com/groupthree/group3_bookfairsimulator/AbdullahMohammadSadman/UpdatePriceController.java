@@ -51,18 +51,19 @@ public class UpdatePriceController
     @javafx.fxml.FXML
     public void updatePrice(ActionEvent actionEvent) {
         if (bookList.isEmpty()){
-            updatePriceLabel.setText("There is no book to update price!");
+            updatePriceLabel.setText("There are no books in the inventory!");
+            return;
         }
 
         Book book = bookTableView.getSelectionModel().getSelectedItem();
 
-        if ((newPriceInput.getText().isEmpty()) || (Double.parseDouble(newPriceInput.getText()) < 0)) {
-            updatePriceLabel.setText("Enter a positive number as price!");
+        if (book == null){
+            updatePriceLabel.setText("Please select a book from the table!");
             return;
         }
 
-        if ((bookTableView.getSelectionModel().getSelectedItems()) == null){
-            updatePriceLabel.setText("Please select a book from the table!");
+        if ((newPriceInput.getText().isEmpty()) || (Double.parseDouble(newPriceInput.getText()) < 0)) {
+            updatePriceLabel.setText("Enter a positive number as price!");
             return;
         }
 

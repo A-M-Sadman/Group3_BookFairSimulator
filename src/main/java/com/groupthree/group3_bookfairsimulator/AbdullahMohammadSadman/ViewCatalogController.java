@@ -4,6 +4,7 @@ import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,6 +28,8 @@ public class ViewCatalogController
     private TableView<Book> bookTableView;
     @javafx.fxml.FXML
     private TableColumn<Book, Double> priceCol;
+    @javafx.fxml.FXML
+    private Label showLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -39,6 +42,9 @@ public class ViewCatalogController
 
     @javafx.fxml.FXML
     public void show(ActionEvent actionEvent) {
+        if (bookList.isEmpty()) {
+            showLabel.setText("There is no book to show!");
+        }
         bookTableView.getItems().addAll(bookList);
     }
 

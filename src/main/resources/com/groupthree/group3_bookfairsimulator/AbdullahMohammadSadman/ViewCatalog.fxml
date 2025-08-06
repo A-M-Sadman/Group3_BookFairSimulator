@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.ViewCatalogController">
    <children>
       <Label layoutX="203.0" layoutY="22.0" text="Show Catalog">
@@ -29,5 +28,6 @@
       </TableView>
       <Button layoutX="539.0" layoutY="310.0" mnemonicParsing="false" onAction="#show" text="Show" />
       <Button layoutX="496.0" layoutY="360.0" mnemonicParsing="false" onAction="#back" text="&lt;- Dashboard" />
+      <Label fx:id="showLabel" layoutX="14.0" layoutY="310.0" prefHeight="35.0" prefWidth="485.0" />
    </children>
 </AnchorPane>

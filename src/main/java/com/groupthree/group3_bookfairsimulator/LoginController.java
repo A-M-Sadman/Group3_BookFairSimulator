@@ -8,6 +8,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+import static com.groupthree.group3_bookfairsimulator.User.userList;
+
 public class LoginController
 {
     @javafx.fxml.FXML
@@ -21,7 +23,7 @@ public class LoginController
     @javafx.fxml.FXML
     private Label createAccountLabel;
     @javafx.fxml.FXML
-    private ComboBox userInput;
+    private ComboBox<String> userInput;
     @javafx.fxml.FXML
     private Label loginLabel;
     @javafx.fxml.FXML
@@ -34,6 +36,28 @@ public class LoginController
 
     @javafx.fxml.FXML
     public void createAccount(ActionEvent actionEvent) {
+        if (newUserInput.getText().isEmpty() || newPassInput.getText().isEmpty()){
+            createAccountLabel.setText("Enter Username and password!");
+            return;
+        }
+        if (!newPassInput.getText().equals(checkNewPass.getText())){
+            createAccountLabel.setText("Password doesn't match!");
+            return;
+        }
+        for (User u:userList) {
+            if (u.getUserName().equals(newUserInput.getText())) {
+                createAccountLabel.setText("This user already exists");
+                return;
+            }
+        }
+
+        User user = new User(
+                newUserInput.getText(),
+                newPassInput.getText()
+        );
+        userList.add(user);
+        userInput.getItems().add(newUserInput.getText());
+        createAccountLabel.setText("New account created successfully!");
     }
 
     @javafx.fxml.FXML
@@ -41,6 +65,16 @@ public class LoginController
         if ((userInput.getValue() == null) || (passInput.getText().isEmpty())){
             loginLabel.setText("Choose user and enter password!");
             return;
+        }
+
+        for (User u : userList) {
+            if ((u.getUserName().equals(userInput.getValue())) && (u.getPassword().equals(passInput.getText()))){
+                AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("UserDashboard.fxml"));
+                Scene scene = new Scene(root);
+                HelloApplication.stage.setTitle("User Dashboard");
+                HelloApplication.stage.setScene(scene);
+                return;
+            }
         }
 
         if ((userInput.getValue().equals("Author")) && (passInput.getText().equals("2310717"))){
@@ -87,8 +121,8 @@ public class LoginController
         else if ((userInput.getValue().equals("Event Manager")) && (passInput.getText().equals("12345"))){
             AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/EventManager.fxml"));
             Scene scene = new Scene(root);
-            HelloApplication.stage.setScene(scene);}
-        else {
+            HelloApplication.stage.setScene(scene);
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Invalid credentials");
