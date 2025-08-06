@@ -23,7 +23,7 @@
       <DatePicker fx:id="datePICKER" layoutX="59.0" layoutY="275.0" />
       <Button layoutX="95.0" layoutY="332.0" mnemonicParsing="false" onAction="#startAlerm" text="Start Alerm" />
       <ComboBox fx:id="incidentTypeXombo" layoutX="58.0" layoutY="195.0" prefWidth="150.0" promptText="Incident Type" />
-      <TableView layoutX="274.0" layoutY="179.0" prefHeight="306.0" prefWidth="353.0">
+      <TableView fx:id="tableView" layoutX="274.0" layoutY="179.0" prefHeight="306.0" prefWidth="353.0">
         <columns>
           <TableColumn fx:id="alarmId" prefWidth="75.0" text="Alarm ID" />
           <TableColumn fx:id="incidentTypeCol" prefWidth="95.20001220703125" text="Incident Type" />
