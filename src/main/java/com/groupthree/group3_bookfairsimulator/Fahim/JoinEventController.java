@@ -98,6 +98,7 @@ public class JoinEventController
 
         }
         joinList.add(tableviwe.getSelectionModel().getSelectedItem());
+        eventList.remove(tableviwe.getSelectionModel().getSelectedItem());
         lable.setText("You have joined: " + tableviwe.getSelectionModel().getSelectedItem().getTitle());
     }
 }
