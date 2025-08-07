@@ -21,7 +21,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void bookListingButton(Event event) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookListing.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Book Listing Done");
         HelloApplication.stage.setScene(scene);
@@ -45,7 +45,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void visitorFeedbackButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/visitorFeedbackButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/visitorFeedback.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
@@ -53,7 +53,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void updateProfileButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/updateProfileButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/updateProfile.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Profile Update Done");
         HelloApplication.stage.setScene(scene);
@@ -61,7 +61,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void salesDashboardButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/salesDashboardButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/salesDashboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Sales DashBoard");
         HelloApplication.stage.setScene(scene);
@@ -69,7 +69,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void cancelStallBookingButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/cancelStallBookingButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/cancelStallBooking.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Stalll Booking Cancelation Done");
         HelloApplication.stage.setScene(scene);
@@ -77,7 +77,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void bookSigningEventButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookSigningEventButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/bookSigningEvent.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Book Signing event done");
         HelloApplication.stage.setScene(scene);
