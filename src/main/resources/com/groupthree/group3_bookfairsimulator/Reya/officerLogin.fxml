@@ -16,8 +16,8 @@
          </font>
       </Text>
       <ComboBox fx:id="reportTypeCombo" layoutX="187.0" layoutY="187.0" prefWidth="150.0" promptText="Report Type" />
-      <TextField fx:id="officerNameTextField" layoutX="188.0" layoutY="103.0" promptText="Officer Name" />
-      <TextField fx:id="officerIdTextField" layoutX="188.0" layoutY="139.0" promptText="Officer ID" />
+      <TextField fx:id="officerNameTextField" layoutX="188.0" layoutY="103.0" promptText="Officer ID" />
+      <TextField fx:id="officerIdTextField" layoutX="188.0" layoutY="139.0" promptText="Password" />
       <Button layoutX="228.0" layoutY="229.0" mnemonicParsing="false" onAction="#generateButton" text="Generate " />
       <Button layoutX="515.0" layoutY="361.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>

@@ -20,7 +20,7 @@
       </Text>
       <TextField fx:id="locationTextField" layoutX="46.0" layoutY="186.0" promptText="Location" />
       <DatePicker fx:id="date" layoutX="46.0" layoutY="232.0" promptText="Date " />
-      <TableView layoutX="340.0" layoutY="113.0" prefHeight="264.0" prefWidth="306.0">
+      <TableView fx:id="tableview" layoutX="340.0" layoutY="113.0" prefHeight="264.0" prefWidth="306.0">
         <columns>
           <TableColumn fx:id="nameCombo" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="logIdCombo" prefWidth="75.0" text="Log ID" />
