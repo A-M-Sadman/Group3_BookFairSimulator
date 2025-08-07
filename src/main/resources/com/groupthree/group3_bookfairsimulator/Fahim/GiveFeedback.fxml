@@ -8,22 +8,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="430.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.GiveFeedbackController">
    <children>
-      <ComboBox layoutX="31.0" layoutY="92.0" prefHeight="24.0" prefWidth="182.0" promptText="Select Feedback Type" />
+      <ComboBox fx:id="comboBox" layoutX="25.0" layoutY="146.0" prefHeight="24.0" prefWidth="182.0" promptText="Select Feedback Type" />
       <Text layoutX="235.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feed Back" wrappingWidth="182.255859375">
          <font>
             <Font size="32.0" />
          </font>
       </Text>
-      <TextField layoutX="235.0" layoutY="92.0" prefHeight="25.0" prefWidth="166.0" text="Enter Stall Name" />
-      <ComboBox layoutX="426.0" layoutY="92.0" prefHeight="24.0" prefWidth="182.0" promptText="Rating " />
-      <TextField layoutX="143.0" layoutY="140.0" prefHeight="43.0" prefWidth="300.0" />
-      <Label fx:id="lable" layoutX="38.0" layoutY="198.0" prefHeight="43.0" prefWidth="483.0" />
-      <Button layoutX="31.0" layoutY="140.0" mnemonicParsing="false" onAction="#comment" prefHeight="43.0" prefWidth="95.0" text="Comment" />
+      <TextField fx:id="stallname" layoutX="198.0" layoutY="92.0" prefHeight="25.0" prefWidth="166.0" promptText="Enter Stall Name" />
+      <ComboBox fx:id="ratingcomboBox" layoutX="228.0" layoutY="146.0" prefHeight="24.0" prefWidth="182.0" promptText="Rating " />
       <Button layoutX="293.0" layoutY="362.0" mnemonicParsing="false" onAction="#back" prefHeight="43.0" prefWidth="95.0" text="&lt; Back" />
       <Button layoutX="401.0" layoutY="362.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="43.0" prefWidth="95.0" text="&lt;&lt; DashBord" />
       <Button layoutX="513.0" layoutY="362.0" mnemonicParsing="false" onAction="#next" prefHeight="43.0" prefWidth="95.0" text="Next &gt;" />
+      <Button layoutX="440.0" layoutY="172.0" mnemonicParsing="false" onAction="#submit" prefHeight="43.0" prefWidth="95.0" text="Submit" />
+      <TextField fx:id="bookname" layoutX="388.0" layoutY="92.0" prefHeight="25.0" prefWidth="166.0" promptText="Enter Book Name" />
+      <Label fx:id="lable" layoutX="14.0" layoutY="241.0" prefHeight="56.0" prefWidth="611.0" />
+      <TextField fx:id="visitorName" layoutX="19.0" layoutY="92.0" prefHeight="25.0" prefWidth="166.0" promptText="Visitor Name" />
    </children>
 </AnchorPane>
