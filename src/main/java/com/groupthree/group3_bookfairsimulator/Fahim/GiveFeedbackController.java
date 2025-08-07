@@ -11,6 +11,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+import static com.groupthree.group3_bookfairsimulator.Fahim.feedBack.feedbackList;
+
 public class GiveFeedbackController
 {
     @javafx.fxml.FXML
@@ -80,14 +82,14 @@ public class GiveFeedbackController
         if (comboBox.getValue().equals("Book Collection")) {
             book = bookname.getText();
         }
+        for (feedBack f : feedbackList) {
+            if (f.getVisitorName().equals(visitorName.getText()) && f.getType().equals(comboBox.getValue())) {
+                lable.setText("You have already submitted this feedback.");
+                return;
+            }
+        }
 
-        feedBack.feedbackList.add(new feedBack(
-                visitorName.getText(),
-                book,
-                stall,
-                comboBox.getValue(),
-                ratingcomboBox.getValue()
-        ));
+        feedbackList.add(new feedBack(visitorName.getText(),book,stall,comboBox.getValue(),ratingcomboBox.getValue()));
 
         lable.setText("Thank you " + visitorName.getText() + ". Your feedback on " + comboBox.getValue() + " has been submitted.");
     }
