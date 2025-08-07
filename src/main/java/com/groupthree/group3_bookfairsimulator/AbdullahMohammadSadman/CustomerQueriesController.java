@@ -28,6 +28,8 @@ public class CustomerQueriesController
     private TextArea messageArea;
     @javafx.fxml.FXML
     private TextField replyInput;
+    @javafx.fxml.FXML
+    private TextField nameInput;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -47,5 +49,42 @@ public class CustomerQueriesController
 
     @javafx.fxml.FXML
     public void reply(ActionEvent actionEvent) {
+        if (queryList.isEmpty()){
+            replyLabel.setText("There are no queries!");
+            return;
+        }
+        CustomerQuery c = queryTableView.getSelectionModel().getSelectedItem();
+        if (c == null) {
+            replyLabel.setText("Please select a query to answer");
+            return;
+        }
+        replyLabel.setText("Reply sent successfully");
+        queryList.remove(c);
+        replyInput.clear();
+        queryTableView.getItems().clear();
+        queryTableView.getItems().addAll(queryList);
+    }
+
+    @javafx.fxml.FXML
+    public void query(ActionEvent actionEvent) {
+        if (nameInput.getText().isEmpty()) {
+            replyLabel.setText("Please give your name!");
+            return;
+        }
+        if (messageArea.getText().isEmpty()){
+            replyLabel.setText("Enter your query please");
+            return;
+        }
+
+        CustomerQuery cq = new CustomerQuery(
+                ""+queryList.size()+1,
+                nameInput.getText(),
+                messageArea.getText()
+        );
+        queryList.add(cq);
+        queryTableView.getItems().clear();
+        queryTableView.getItems().addAll(queryList);
+        messageArea.clear();
+        nameInput.clear();
     }
 }

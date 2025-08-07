@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.ViewPendingTaskController">
    <children>
       <Label layoutX="160.0" layoutY="21.0" text="View Pending Tasks">
@@ -27,5 +26,6 @@
       </TableView>
       <Button layoutX="333.0" layoutY="274.0" mnemonicParsing="false" onAction="#showPendingTasks" text="Show pending tasks" />
       <Button layoutX="495.0" layoutY="360.0" mnemonicParsing="false" onAction="#back" text="&lt;- Dashboard" />
+      <Label fx:id="showLabel" layoutX="333.0" layoutY="139.0" prefHeight="125.0" prefWidth="232.0" />
    </children>
 </AnchorPane>
