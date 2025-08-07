@@ -11,6 +11,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+import static com.groupthree.group3_bookfairsimulator.Fahim.stall.stallList;
+
 public class FindStallController
 {
     @javafx.fxml.FXML
@@ -26,28 +28,51 @@ public class FindStallController
     public void initialize() {
         combobox.getItems().addAll("Publisher Stall","Author’s Corner","Children’s Book Stall","Academic & Educational Stall","Comics & Graphic Novels Stall","Second-hand Books Stall");
     }
-
     @javafx.fxml.FXML
     public void search(ActionEvent actionEvent) {
-        if (nameT.getText().isEmpty() && numberT.getText().isEmpty() && combobox.getValue() == null) {
+        String name = nameT.getText();
+        String numberText = numberT.getText();
+        String type = (String) combobox.getValue();
+
+        if (name.isEmpty() || numberText.isEmpty() || type == null) {
             lable.setText("Please fill All the Input");
             return;
         }
-        if ("Publisher Stall".equals(combobox.getValue())) {
-            lable.setText("The " + nameT.getText() + " is in Publisher area in Zone A");
-        } else if ("Author’s Corner".equals(combobox.getValue())) {
-            lable.setText("The " + nameT.getText() + " is in Author’s Corner in Zone B");
-        } else if ("Children’s Book Stall".equals(combobox.getValue())) {
-            lable.setText("The " + nameT.getText() + " is in Children’s Books in Zone C");
-        } else if ("Academic & Educational Stall".equals(combobox.getValue())) {
-            lable.setText("The " + nameT.getText() + " is in Academic & Educational area in Zone D");
-        } else if ("Comics & Graphic Novels Stall".equals(combobox.getValue())) {
-            lable.setText("The " + nameT.getText() + " is in Comics & Graphic Novels in Zone E");
-        } else if ("Second-hand Books Stall".equals(combobox.getValue())) {
-            lable.setText("The " + nameT.getText() + " is in Second-hand Books in Zone F");
+
+        int number;
+        try {
+            number = Integer.parseInt(numberText);
+        } catch (NumberFormatException e) {
+            lable.setText("Stall number must be an integer.");
+            return;
+        }
+
+        String location = "";
+
+        if (type.equals("Publisher Stall")) {
+            location = "Zone A";
+            lable.setText("The " + name + " (Stall No: " + number + ") is in Publisher area in " + location);
+        } else if (type.equals("Author’s Corner")) {
+            location = "Zone B";
+            lable.setText("The " + name + " (Stall No: " + number + ") is in Author’s Corner in " + location);
+        } else if (type.equals("Children’s Book Stall")) {
+            location = "Zone C";
+            lable.setText("The " + name + " (Stall No: " + number + ") is in Children’s Books in " + location);
+        } else if (type.equals("Academic & Educational Stall")) {
+            location = "Zone D";
+            lable.setText("The " + name + " (Stall No: " + number + ") is in Academic & Educational area in " + location);
+        } else if (type.equals("Comics & Graphic Novels Stall")) {
+            location = "Zone E";
+            lable.setText("The " + name + " (Stall No: " + number + ") is in Comics & Graphic Novels in " + location);
+        } else if (type.equals("Second-hand Books Stall")) {
+            location = "Zone F";
+            lable.setText("The " + name + " (Stall No: " + number + ") is in Second-hand Books in " + location);
         } else {
             lable.setText("Please select a valid stall type");
+            return;
         }
+
+        stallList.add(new stall(name, number, type, location));
     }
 
     @javafx.fxml.FXML

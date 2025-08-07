@@ -3,6 +3,7 @@ package com.groupthree.group3_bookfairsimulator.Reya;
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class AccessSequrityLogs
@@ -23,6 +24,8 @@ public class AccessSequrityLogs
     private TableColumn nameCombo;
     @javafx.fxml.FXML
     private TableColumn logIdCombo;
+    @javafx.fxml.FXML
+    private TableView tableview;
 
     @javafx.fxml.FXML
     public void initialize() {
