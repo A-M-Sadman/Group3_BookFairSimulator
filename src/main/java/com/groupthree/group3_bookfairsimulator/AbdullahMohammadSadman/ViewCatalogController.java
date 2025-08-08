@@ -44,8 +44,15 @@ public class ViewCatalogController
     public void show(ActionEvent actionEvent) {
         if (bookList.isEmpty()) {
             showLabel.setText("There is no book to show!");
+            return;
         }
-        bookTableView.getItems().addAll(bookList);
+        try {
+            bookTableView.getItems().addAll(BookManager.getBookList());
+            showLabel.setText("Data loaded successfully");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+//        bookTableView.getItems().addAll(bookList);
     }
 
     @javafx.fxml.FXML

@@ -31,7 +31,7 @@ public class AddBookController
 
     @javafx.fxml.FXML
     public void initialize() {
-        genreInput.getItems().addAll("Action", "Romance", "Thriller", "Horror");
+        genreInput.getItems().addAll("Literature", "Action", "Romance", "Thriller", "Horror");
     }
 
 
@@ -70,6 +70,12 @@ public class AddBookController
             bookList.add(book);
 
             addBookLabel.setText("Book successfully added to the inventory!");
+
+            try {
+                BookManager.saveBookList(bookList);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         } catch (NumberFormatException e) {
             addBookLabel.setText("Enter a valid number");
         }
