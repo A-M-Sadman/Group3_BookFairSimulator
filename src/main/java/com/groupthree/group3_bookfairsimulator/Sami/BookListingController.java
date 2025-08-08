@@ -62,9 +62,9 @@ public class BookListingController
         }
         bookListing newBook = new bookListing(title, bookID, genre);
 
-        bookListingTableView.getItems().add(newBook); // ✅ Add to TableView
+        bookListingTableView.getItems().add(newBook);
 
-        // Clear inputs
+        // Clear input
         titleTextField.clear();
         bookIdTextField.clear();
         genreCombo.getSelectionModel().clearSelection();
