@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.groupthree.group3_bookfairsimulator.Reya.VolunteerCoordinate"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="376.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.VolunteerCoordinate">
+   <children>
+      <TextField fx:id="providestallinformationtextfield" layoutX="24.0" layoutY="38.0" promptText="provide stall information" />
+      <Button layoutX="81.0" layoutY="250.0" mnemonicParsing="false" onAction="#handlelostandfoundonactions" prefHeight="18.0" prefWidth="240.0" text="Handle lost and found" />
+      <Button layoutX="158.0" layoutY="293.0" mnemonicParsing="false" onAction="#generateonactions" text="generate report" />
+      <TextArea fx:id="textareata" layoutX="399.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="399.0" layoutY="293.0" mnemonicParsing="false" onAction="#backonactions" text="back" />
+      <TextField fx:id="volunteeridtextfield" layoutX="24.0" layoutY="64.0" promptText="volunteer id" />
+      <TextField fx:id="nametextfield" layoutX="24.0" layoutY="90.0" promptText="name" />
+      <ComboBox fx:id="availabilitycombo" layoutX="23.0" layoutY="125.0" prefWidth="150.0" promptText="availability" />
+      <Text layoutX="235.0" layoutY="-7.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage " wrappingWidth="328.00628662109375" />
+      <Text layoutX="195.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Volunteer Coordinator" wrappingWidth="189.33677673339844" />
+   </children>
 </AnchorPane>
