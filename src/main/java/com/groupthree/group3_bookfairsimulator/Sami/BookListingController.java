@@ -64,7 +64,7 @@ public class BookListingController
 
         bookListingTableView.getItems().add(newBook);
 
-        // Clear input
+
         titleTextField.clear();
         bookIdTextField.clear();
         genreCombo.getSelectionModel().clearSelection();
