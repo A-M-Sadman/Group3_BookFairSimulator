@@ -8,7 +8,7 @@ public class Eventmanagement {
     private String eventType;
     private String date;
 
-    protected static ArrayList<Eventmanagement> eventmanagements = new ArrayList<>();
+    public static ArrayList<Eventmanagement> eventmanagements = new ArrayList<>();
 
     public Eventmanagement(String eventName, String location, String eventType, String date) {
         this.eventName = eventName;

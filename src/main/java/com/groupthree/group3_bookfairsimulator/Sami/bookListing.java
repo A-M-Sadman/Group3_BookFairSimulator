@@ -7,7 +7,7 @@ public class bookListing {
     private String title;
     private String bookID;
     private String genre;
-    protected static ArrayList<bookListing> bookListings = new ArrayList<>();
+    public static ArrayList<bookListing> bookListings = new ArrayList<>();
 
     public bookListing(String title, String bookID, String genre) {
         this.title = title;
