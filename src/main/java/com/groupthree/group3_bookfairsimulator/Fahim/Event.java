@@ -8,7 +8,7 @@ public class Event {
     private LocalDate date;
     private String time;
     private String location;
-
+    private String parName;
 
     public Event(String title, LocalDate date, String time, String location) {
         this.title = title;
@@ -16,6 +16,7 @@ public class Event {
         this.time = time;
         this.location = location;
     }
+
     public static ArrayList<Event> eventList = new ArrayList<>();
     public static ArrayList<Event> joinList = new ArrayList<>();
 
@@ -23,6 +24,11 @@ public class Event {
     }
 
     public static void add(Event b) {
+        eventList.add(b);
+    }
+
+    public static void addJoin(Event b) {
+        joinList.add(b);
     }
 
     public String getTitle() {
@@ -57,6 +63,14 @@ public class Event {
         this.location = location;
     }
 
+    public String getParName() {
+        return parName;
+    }
+
+    public void setParName(String parName) {
+        this.parName = parName;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -64,6 +78,7 @@ public class Event {
                 ", date=" + date +
                 ", time='" + time + '\'' +
                 ", location='" + location + '\'' +
+                ", parName='" + parName + '\'' +
                 '}';
     }
 }

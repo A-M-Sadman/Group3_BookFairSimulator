@@ -10,7 +10,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="557.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Fahim.SeeWhoJoinedEventController">
    <children>
       <Text layoutX="212.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See Who Joined Event ">
@@ -30,13 +29,14 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TextField fx:id="nametextfild" layoutX="20.0" layoutY="97.0" text="Participants Name " />
-      <TextField fx:id="eventtextfild" layoutX="20.0" layoutY="131.0" text="Event Name " />
+      <TextField fx:id="nametextfild" layoutX="20.0" layoutY="97.0" promptText="Participants Name " />
+      <TextField fx:id="eventtextfild" layoutX="20.0" layoutY="131.0" promptText="Event Name " />
       <DatePicker fx:id="datepicker" layoutX="20.0" layoutY="164.0" prefHeight="25.0" prefWidth="149.0" promptText="Event Date " />
       <Button layoutX="188.0" layoutY="153.0" mnemonicParsing="false" onAction="#viweforspecific" prefHeight="47.0" prefWidth="168.0" text="View for a Specific Event" />
       <Button layoutX="331.0" layoutY="493.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="92.0" text="&lt; Back " />
       <Button layoutX="439.0" layoutY="493.0" mnemonicParsing="false" onAction="#dashbord" prefHeight="41.0" prefWidth="92.0" text="&lt;&lt; DashBord" />
       <Button layoutX="545.0" layoutY="493.0" mnemonicParsing="false" onAction="#next" prefHeight="41.0" prefWidth="92.0" text="Next &gt;" />
-      <Label fx:id="lable" layoutX="20.0" layoutY="210.0" prefHeight="33.0" prefWidth="343.0" />
+      <Label fx:id="lable" layoutX="20.0" layoutY="210.0" prefHeight="33.0" prefWidth="634.0" />
+      <Button layoutX="379.0" layoutY="153.0" mnemonicParsing="false" onAction="#Reset" prefHeight="47.0" prefWidth="168.0" text="Reset" />
    </children>
 </AnchorPane>
