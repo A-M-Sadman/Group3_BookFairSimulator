@@ -71,7 +71,7 @@ public class VisitorFeedbackController {
 
         label.setText("Feedback added successfully!");
 
-        // Optionally clear fields after adding feedback
+        // clear
         visitorIDtextField.clear();
         visitornameTextFileld.clear();
         boookTitleTextField.clear();
