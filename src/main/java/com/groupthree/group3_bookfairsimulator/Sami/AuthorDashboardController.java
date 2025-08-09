@@ -37,7 +37,7 @@ public class AuthorDashboardController
 
     @javafx.fxml.FXML
     public void promotionalSupportButton(ActionEvent actionEvent) throws IOException{
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/promotionalSupportButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/promotionalSupport.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Promotion Done");
         HelloApplication.stage.setScene(scene);
