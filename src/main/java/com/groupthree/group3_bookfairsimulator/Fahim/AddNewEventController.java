@@ -40,20 +40,22 @@ public class AddNewEventController
 
     @javafx.fxml.FXML
     public void addNewEvent(ActionEvent actionEvent) {
-        if ((eventTitleTextfild.getText().isEmpty()) ||
-                (eventLocation.getText().isEmpty()) ||
-                (eventTimeTextFild.getText().isEmpty()) ||
-                (datepicker.getValue() == null)) {
-
+        if ((eventTitleTextfild.getText().isEmpty()) && (eventLocation.getText().isEmpty()) && (eventTimeTextFild.getText().isEmpty()) && (datepicker.getValue() == null)) {
             lable.setText("Please fill-up all the input fields!");
             return;
         }
+
         String time = eventTimeTextFild.getText();
-        if (pm.isSelected()) {
-            time += " PM";
-        } else if (am.isSelected()) {
+
+        if (am.isSelected()) {
             time += " AM";
+        } else if (pm.isSelected()) {
+            time += " PM";
+        } else {
+            lable.setText("Please select AM or PM for the time.");
+            return;
         }
+
         for (Event b : eventList) {
             if ((b.getLocation().equals(eventLocation.getText())) &&
                     (b.getTime().equals(time)) &&
@@ -63,15 +65,18 @@ public class AddNewEventController
                 return;
             }
         }
+
         Event b = new Event(
                 eventTitleTextfild.getText(),
                 datepicker.getValue(),
                 time,
                 eventLocation.getText()
         );
+
         eventList.add(b);
         lable.setText("Event successfully added!");
     }
+
 
     @javafx.fxml.FXML
     public void next(ActionEvent actionEvent) throws IOException {

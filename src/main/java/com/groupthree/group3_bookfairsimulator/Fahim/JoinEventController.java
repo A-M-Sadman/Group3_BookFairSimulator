@@ -14,8 +14,7 @@ import java.time.LocalDate;
 import static com.groupthree.group3_bookfairsimulator.Fahim.Event.eventList;
 import static com.groupthree.group3_bookfairsimulator.Fahim.Event.joinList;
 
-public class JoinEventController
-{
+public class JoinEventController {
     @javafx.fxml.FXML
     private Label lable;
     @javafx.fxml.FXML
@@ -32,6 +31,8 @@ public class JoinEventController
     private DatePicker datepicker;
     @javafx.fxml.FXML
     private TableColumn<Event, LocalDate> tableDate;
+    @javafx.fxml.FXML
+    private TextField parText;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -39,6 +40,7 @@ public class JoinEventController
         tableDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         tableTime.setCellValueFactory(new PropertyValueFactory<>("time"));
         tableLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
+
         tableviwe.getItems().addAll(eventList);
     }
 
@@ -50,8 +52,8 @@ public class JoinEventController
             return;
         }
         tableviwe.getItems().clear();
-        for (Event x : eventList){
-            if (eventNameTextfild.getText().equals(x.getTitle()) || (datepicker.getValue().equals(x.getDate()))){
+        for (Event x : eventList) {
+            if (eventNameTextfild.getText().equals(x.getTitle()) || (datepicker.getValue().equals(x.getDate()))) {
                 tableviwe.getItems().add(x);
                 return;
             }
@@ -88,16 +90,23 @@ public class JoinEventController
 
     @javafx.fxml.FXML
     public void joinTable(ActionEvent actionEvent) {
-        if (tableviwe.getSelectionModel().getSelectedItem() == null) {
-            lable.setText("Please select an event from the table.");
+        Event selected = tableviwe.getSelectionModel().getSelectedItem();
+        if (selected == null || parText.getText().isEmpty()) {
+            lable.setText("Please select an event and enter your name.");
             return;
         }
-        if (joinList.contains(tableviwe.getSelectionModel().getSelectedItem())) {
-            lable.setText("You have already joined: " + (tableviwe.getSelectionModel().getSelectedItem()).getTitle());
-            return;
 
+        for (Event e : joinList) {
+            if (e.equals(selected)) {
+                lable.setText("You have already joined: " + selected.getTitle());
+                return;
+            }
         }
-        joinList.add(tableviwe.getSelectionModel().getSelectedItem());
-        lable.setText("You have joined: " + tableviwe.getSelectionModel().getSelectedItem().getTitle());
+
+        selected.setParName(parText.getText());
+        joinList.add(selected);
+        eventList.remove(selected);
+        lable.setText("You have joined: " + selected.getTitle());
     }
 }
+

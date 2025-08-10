@@ -28,8 +28,8 @@
             <Font size="27.0" />
          </font>
       </Text>
-      <TextField fx:id="eventNameTextfild" layoutX="33.0" layoutY="37.0" promptText="Event Name" />
-      <DatePicker fx:id="datepicker" layoutX="33.0" layoutY="76.0" prefHeight="25.0" prefWidth="149.0" promptText="Event Date" />
+      <TextField fx:id="eventNameTextfild" layoutX="33.0" layoutY="96.0" promptText="Event Name" />
+      <DatePicker fx:id="datepicker" layoutX="33.0" layoutY="135.0" prefHeight="25.0" prefWidth="149.0" promptText="Event Date" />
       <Button layoutX="217.0" layoutY="108.0" mnemonicParsing="false" onAction="#join" prefHeight="36.0" prefWidth="113.0" text="Join Filter" />
       <Label fx:id="lable" layoutX="33.0" layoutY="211.0" prefHeight="36.0" prefWidth="355.0" />
       <Button layoutX="403.0" layoutY="521.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="113.0" text="&lt; Back" />
@@ -37,5 +37,6 @@
       <Button layoutX="672.0" layoutY="521.0" mnemonicParsing="false" onAction="#next" prefHeight="36.0" prefWidth="113.0" text="Next &gt;" />
       <Button layoutX="217.0" layoutY="157.0" mnemonicParsing="false" onAction="#joinTable" prefHeight="36.0" prefWidth="113.0" text="Join from Table" />
       <Button layoutX="347.0" layoutY="129.0" mnemonicParsing="false" onAction="#Reset" prefHeight="36.0" prefWidth="113.0" text="Reset" />
+      <TextField fx:id="parText" layoutX="33.0" layoutY="55.0" promptText="Participants Name " />
    </children>
 </AnchorPane>

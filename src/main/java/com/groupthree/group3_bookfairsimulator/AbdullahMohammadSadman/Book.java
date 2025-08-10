@@ -1,8 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Book {
+public class Book implements Serializable {
     private String title;
     private String author;
     private double price;
