@@ -16,7 +16,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void accessSequrityButton(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/accessSequrityButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/accessSequrityLogs.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
@@ -24,7 +24,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void activeAlermButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/activeAlermButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/activeAlerms.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Activate Alarm");
         HelloApplication.stage.setScene(scene);
@@ -32,7 +32,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void visitorEntryButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/visitorEntryButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/visitorEntry.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
@@ -40,7 +40,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void emergencyDrillButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/emergencyDrillButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/emergencyDrill.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Emergency Drill Done");
         HelloApplication.stage.setScene(scene);
@@ -48,7 +48,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void assignDutyButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/ assignDutyButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/ assignDuty.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Assign Duty Done");
         HelloApplication.stage.setScene(scene);
@@ -56,7 +56,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void realTimeButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/realTimeButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/realTimeSurvillance.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Real Time Button");
         HelloApplication.stage.setScene(scene);
@@ -64,7 +64,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void incidentReportButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/incidentReportButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/incidentReport.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
@@ -72,7 +72,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void manageSequrityClearenceButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/manageSequrityClearenceButton.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/manageSequrityClearence.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
