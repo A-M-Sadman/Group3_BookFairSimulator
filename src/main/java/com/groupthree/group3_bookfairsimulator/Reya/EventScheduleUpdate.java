@@ -10,9 +10,9 @@ public class EventScheduleUpdate
     @javafx.fxml.FXML
     private TextField eventidtextfield;
     @javafx.fxml.FXML
-    private ComboBox eventtypecombobox;
+    private ComboBox<String> eventtypecombobox;
     @javafx.fxml.FXML
-    private ComboBox locationcombobox;
+    private ComboBox<String> locationcombobox;
     @javafx.fxml.FXML
     private TextField aurthornametextfield;
     @javafx.fxml.FXML
