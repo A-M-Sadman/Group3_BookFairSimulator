@@ -12,7 +12,7 @@ public class VolunteerCoordinate
     @javafx.fxml.FXML
     private TextArea textareata;
     @javafx.fxml.FXML
-    private ComboBox availabilitycombo;
+    private ComboBox<String> availabilitycombo;
     @javafx.fxml.FXML
     private TextField volunteeridtextfield;
     @javafx.fxml.FXML
@@ -20,6 +20,7 @@ public class VolunteerCoordinate
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
     @javafx.fxml.FXML
