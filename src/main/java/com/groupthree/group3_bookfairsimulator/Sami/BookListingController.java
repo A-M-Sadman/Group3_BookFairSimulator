@@ -34,7 +34,7 @@ public class BookListingController
     private Label messageLabel;
     @javafx.fxml.FXML
     private TableColumn<bookListing,String> bookIDCol;
-    private static final String DATA_FILE_NAME = "data/booklist.bin";
+    private static final String DATA_FILE_NAME = "Data/booklist.bin";
 
 
     static ArrayList<bookListing> getBookList() {
