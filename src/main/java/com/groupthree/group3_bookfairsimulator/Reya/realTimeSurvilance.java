@@ -1,7 +1,5 @@
 package com.groupthree.group3_bookfairsimulator.Reya;
 
-import com.groupthree.group3_bookfairsimulator.Sami.bookListing;
-
 import java.util.ArrayList;
 
 public class realTimeSurvilance {
@@ -10,7 +8,7 @@ public class realTimeSurvilance {
     private String date;
     public static ArrayList<realTimeSurvilance> realTimeSurvilances = new ArrayList<>();
 
-    public realTimeSurvilance(String location, String cameraId, String date) {
+    public realTimeSurvilance(String location, String cameraId, String date, String description) {
         this.location = location;
         this.cameraId = cameraId;
         this.date = date;
