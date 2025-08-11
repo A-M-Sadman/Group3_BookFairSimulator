@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="516.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.AccessSequrityLogs">
    <children>
       <TextField fx:id="logIdTextField" layoutX="45.0" layoutY="137.0" promptText="Log ID" />
@@ -20,7 +19,7 @@
       </Text>
       <TextField fx:id="locationTextField" layoutX="46.0" layoutY="186.0" promptText="Location" />
       <DatePicker fx:id="date" layoutX="46.0" layoutY="232.0" promptText="Date " />
-      <TableView fx:id="tableview" layoutX="340.0" layoutY="113.0" prefHeight="264.0" prefWidth="306.0">
+      <TableView fx:id="accessTableview" layoutX="340.0" layoutY="113.0" prefHeight="264.0" prefWidth="306.0">
         <columns>
           <TableColumn fx:id="nameCombo" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="logIdCombo" prefWidth="75.0" text="Log ID" />
@@ -30,6 +29,6 @@
       </TableView>
       <Button layoutX="52.0" layoutY="294.0" mnemonicParsing="false" onAction="#addLogButton" text="Add Log Detais" />
       <TextField fx:id="nameTextField" layoutX="45.0" layoutY="89.0" promptText="Name " />
-      <Button layoutX="574.0" layoutY="448.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Button layoutX="574.0" layoutY="448.0" mnemonicParsing="false" onAction="#backButton" text="Dashboard" />
    </children>
 </AnchorPane>

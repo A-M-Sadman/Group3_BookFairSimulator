@@ -25,7 +25,7 @@ public class AccessSequrityLogs
     @javafx.fxml.FXML
     private TableColumn logIdCombo;
     @javafx.fxml.FXML
-    private TableView tableview;
+    private TableView accessTableview;
 
     @javafx.fxml.FXML
     public void initialize() {

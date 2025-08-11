@@ -3,10 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="458.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.EmergencyDrill">
    <children>
@@ -19,5 +19,8 @@
       <ComboBox fx:id="assignCombo" layoutX="170.0" layoutY="216.0" prefWidth="150.0" promptText="Assign Zone" />
       <Button layoutX="534.0" layoutY="411.0" mnemonicParsing="false" onAction="#backButon" text="Back" />
       <ComboBox fx:id="drillTypeCombo" layoutX="170.0" layoutY="121.0" prefWidth="150.0" promptText="Drill Type" />
+      <Button layoutX="232.0" layoutY="276.0" mnemonicParsing="false" onAction="#confirmButton" text="Confirm" />
+      <Label layoutX="67.0" layoutY="383.0" />
+      <Label fx:id="emergenCydrillLabel" layoutX="128.0" layoutY="375.0" prefHeight="55.0" prefWidth="298.0" />
    </children>
 </AnchorPane>
