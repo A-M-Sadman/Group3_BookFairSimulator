@@ -1,34 +1,34 @@
-package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
+package com.groupthree.group3_bookfairsimulator.Fahim;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookManager {
-    private static final String fileName = "Data/book.bin";
+public class stallManager {
+    private static final String fileName = "Data/stall.bin";
 
-    public static final ArrayList<Book> bookList = new ArrayList<>();
+    public static ArrayList<stall> stallList = new ArrayList<stall>();
     static {
-        bookList.addAll(getBookList());
+        stallList.addAll(getstallList());
     }
 
-    private static ArrayList<Book> getBookList() {
+    private static ArrayList<stall> getstallList() {
 
-        ArrayList<Book> abookList = new ArrayList<>();
+        ArrayList<stall> stallsList = new ArrayList<>();
 
         try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(fileName))) {
-            abookList = (ArrayList<Book>) stream.readObject();
+            stallsList = (ArrayList<stall>) stream.readObject();
         } catch (InvalidClassException | ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return abookList;
+        return stallsList;
     }
 
-    public static void saveBookList() {
+    public static void savestallList() {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<Book> tempList = new ArrayList<>(bookList);
+            ArrayList<stall> tempList = new ArrayList<>(stallList);
             stream.writeObject(tempList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,8 +36,10 @@ public class BookManager {
         }
     }
 
-    public static void resetBookList() {
-        bookList.clear();
-        saveBookList();
+    public static void resetEventList() {
+        stallList.clear();
+        savestallList();
     }
 }
+
+

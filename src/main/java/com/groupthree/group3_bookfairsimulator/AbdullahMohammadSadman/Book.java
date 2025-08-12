@@ -20,7 +20,7 @@ public class Book implements Serializable {
         Book.totalSales = totalSales;
     }
 
-    public static ArrayList<Book> bookList = new ArrayList<>();
+
     public static ArrayList<Book> favBooklist = new ArrayList<>();
 
     public Book() {
