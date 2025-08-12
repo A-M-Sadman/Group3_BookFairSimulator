@@ -1,8 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class feedBack {
+public class feedBack implements Serializable {
     private String visitorName;
     private String bookName;
     private String stallName;
@@ -16,7 +17,6 @@ public class feedBack {
         this.type = type;
         this.rating = rating;
     }
-    public static ArrayList<feedBack> feedbackList = new ArrayList<>();
 
     public feedBack() {
     }

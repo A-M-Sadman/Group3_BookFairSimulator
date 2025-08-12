@@ -1,8 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class stall {
+public class stall implements Serializable {
     private String name;
     private int number;
     private String cetagory;
@@ -14,7 +15,6 @@ public class stall {
         this.cetagory = cetagory;
         this.location = location;
     }
-    public static ArrayList<stall> stallList = new ArrayList<stall>();
 
     public stall() {
     }

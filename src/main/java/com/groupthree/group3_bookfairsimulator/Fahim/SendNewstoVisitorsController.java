@@ -6,23 +6,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class SendNewstoVisitorsController
-{
+import static com.groupthree.group3_bookfairsimulator.Fahim.NewsManager.newsList;
+
+public class SendNewstoVisitorsController {
     @javafx.fxml.FXML
     private Label lable;
     @javafx.fxml.FXML
-    private Label lable1;
-    @javafx.fxml.FXML
     private TextField newsTitleTextfild;
     @javafx.fxml.FXML
-    private ComboBox combobox;
-    @javafx.fxml.FXML
-    private TextField msgTextfild1;
+    private TextArea textArea;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -52,5 +50,20 @@ public class SendNewstoVisitorsController
 
     @javafx.fxml.FXML
     public void send(ActionEvent actionEvent) {
+        if (newsTitleTextfild.getText().isEmpty()) {
+            lable.setText("Please Give a Title");
+            return;
+        }
+        if (textArea.getText().isEmpty()) {
+            lable.setText("Please Write News Content");
+            return;
+        }
+
+        newsList.add(new News(newsTitleTextfild.getText(), textArea.getText()));
+
+        lable.setText("News Sent Successfully");
+
+        newsTitleTextfild.clear();
+        textArea.clear();
     }
 }

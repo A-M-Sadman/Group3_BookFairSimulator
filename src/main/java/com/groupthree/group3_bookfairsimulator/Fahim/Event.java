@@ -1,9 +1,10 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Event {
+public class Event implements Serializable {
     private String title;
     private LocalDate date;
     private String time;
@@ -17,19 +18,18 @@ public class Event {
         this.location = location;
     }
 
-    public static ArrayList<Event> eventList = new ArrayList<>();
-    public static ArrayList<Event> joinList = new ArrayList<>();
+
 
     public Event() {
     }
 
-    public static void add(Event b) {
-        eventList.add(b);
-    }
-
-    public static void addJoin(Event b) {
-        joinList.add(b);
-    }
+//    public static void add(Event b) {
+//        eventList.add(b);
+//    }
+//
+//    public static void addJoin(Event b) {
+//        joinList.add(b);
+//    }
 
     public String getTitle() {
         return title;
