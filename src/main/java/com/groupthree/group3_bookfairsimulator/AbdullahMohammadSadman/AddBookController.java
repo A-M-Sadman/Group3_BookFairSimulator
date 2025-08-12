@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book.bookList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager.bookList;
 
 public class AddBookController
 {
@@ -72,7 +72,7 @@ public class AddBookController
             addBookLabel.setText("Book successfully added to the inventory!");
 
             try {
-                BookManager.saveBookList(bookList);
+                BookManager.saveBookList();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
