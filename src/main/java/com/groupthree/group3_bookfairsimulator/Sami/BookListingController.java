@@ -4,12 +4,17 @@ import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book;
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookListingController
 {
@@ -29,6 +34,48 @@ public class BookListingController
     private Label messageLabel;
     @javafx.fxml.FXML
     private TableColumn<bookListing,String> bookIDCol;
+    private static final String DATA_FILE_NAME = "Data/booklist.bin";
+
+
+    static ArrayList<bookListing> getBookList() {
+        ArrayList<bookListing> bookList = new ArrayList<>();
+
+        File file = new File(DATA_FILE_NAME);
+        if (!file.exists()) {
+            return bookList;
+        }
+
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream(file)
+        )) {
+            bookList = (ArrayList<bookListing>) stream.readObject();
+        } catch (EOFException e) {
+
+
+        } catch (InvalidClassException | ClassNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Invalid file format please delete file and try again.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error reading book list from file!");
+        }
+
+        return bookList;
+    }
+
+    public static void saveBookList(List<bookListing> bookList) {
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream(DATA_FILE_NAME)
+        )) {
+            stream.writeObject(new ArrayList<>(bookList));
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Could not save book list to file!");
+        }
+    }
+
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -39,9 +86,16 @@ public class BookListingController
         genreCombo.getItems().addAll("Fantasy","Science Fiction", "Mystery", "Thriller", "Horror","Poetry","Romance","History");
 
     }
+    public void next(ActionEvent actionEvent) throws IOException{
+        Parent root = FXMLLoader.load(HelloApplication.class.getResource("BookListing.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+    }
 
     @javafx.fxml.FXML
     public void bookListingButton(ActionEvent actionEvent) {
+
         String title = titleTextField.getText();
         String bookID = bookIdTextField.getText();
         String genre = genreCombo.getValue();
@@ -54,13 +108,15 @@ public class BookListingController
             messageLabel.setText("Please Give the bookID");
             return;
         }
-        if (genreCombo == null){
+        if (genreCombo.getValue() == null){
             messageLabel.setText("Please Fill up the genre");
             return;
 
 
         }
         bookListing newBook = new bookListing(title, bookID, genre);
+
+
 
         bookListingTableView.getItems().add(newBook);
 
@@ -81,4 +137,23 @@ public class BookListingController
         HelloApplication.stage.setScene(scene);
 
     }
+
+
+
+    @javafx.fxml.FXML
+    public void saveButton(ActionEvent actionEvent) {
+        try {
+            saveBookList(bookListingTableView.getItems());
+            messageLabel.setText("Data saved successfully!");
+        } catch (RuntimeException e) {
+            messageLabel.setText(e.getMessage());
+        }
+
+
+
+
+
+
+    }
+
 }
