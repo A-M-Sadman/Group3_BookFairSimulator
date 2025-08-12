@@ -31,6 +31,6 @@
       <Button layoutX="589.0" layoutY="400.0" mnemonicParsing="false" onAction="#dashBoardButton" text="Dashboard" />
       <Label fx:id="visitorEntryLabel" layoutX="93.0" layoutY="347.0" prefHeight="84.0" prefWidth="251.0" />
       <Button layoutX="65.0" layoutY="287.0" mnemonicParsing="false" onAction="#visitorEntryButton" text="Show Visitor Entry" />
-      <ComboBox fx:id="ticketNumberCombo" layoutX="45.0" layoutY="161.0" prefWidth="150.0" promptText="ticketNumberCobo" />
+      <ComboBox fx:id="ticketNumberCombo" layoutX="45.0" layoutY="161.0" prefWidth="150.0" promptText="Ticket Number" />
    </children>
 </AnchorPane>
