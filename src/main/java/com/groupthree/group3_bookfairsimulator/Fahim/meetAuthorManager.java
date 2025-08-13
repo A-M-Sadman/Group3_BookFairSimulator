@@ -5,32 +5,40 @@ import java.util.ArrayList;
 
 public class meetAuthorManager {
     private static final String fileName = "Data/Author.bin";
-    private static final String rfileName = "Data/Author.bin";
+    private static final String rfileName = "Data/RegisterAuthors.bin";
 
     public static ArrayList<meetAuthor> meetauthorList = new ArrayList<>();
     public static ArrayList<meetAuthor> registerlist = new ArrayList<>();
 
     static {
         meetauthorList.addAll(getmeetAuthorList());
+        registerlist.addAll(getRegisterList());
     }
 
     private static ArrayList<meetAuthor> getmeetAuthorList() {
-        ArrayList<meetAuthor> meetAothorsList = new ArrayList<>();
-
+        ArrayList<meetAuthor> list = new ArrayList<>();
         try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(fileName))) {
-            meetAothorsList = (ArrayList<meetAuthor>) stream.readObject();
-        } catch (InvalidClassException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            list = (ArrayList<meetAuthor>) stream.readObject();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return meetAothorsList;
+        return list;
     }
+
+    public static ArrayList<meetAuthor> getRegisterList() {
+        ArrayList<meetAuthor> list = new ArrayList<>();
+        try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(rfileName))) {
+            list = (ArrayList<meetAuthor>) stream.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
     public static void savemeetAuthorList() {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<meetAuthor> tempList = new ArrayList<>(meetauthorList);
-            stream.writeObject(tempList);
+            stream.writeObject(new ArrayList<>(meetauthorList));
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Could not save data to file");
@@ -38,12 +46,11 @@ public class meetAuthorManager {
     }
 
     public static void saveregisterList() {
-        try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<meetAuthor> tempList = new ArrayList<>(registerlist);
-            stream.writeObject(tempList);
+        try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(rfileName))) {
+            stream.writeObject(new ArrayList<>(registerlist));
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("Could not save data to file");
+            throw new RuntimeException("Could not save registered authors");
         }
     }
 

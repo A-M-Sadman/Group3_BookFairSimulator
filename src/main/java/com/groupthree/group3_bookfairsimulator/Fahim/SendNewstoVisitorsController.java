@@ -60,8 +60,14 @@ public class SendNewstoVisitorsController {
             return;
         }
 
-        newsList.add(new News(newsTitleTextfild.getText(), textArea.getText()));
+        for (News a : newsList) {
+            if (a.getTitle().equals(newsTitleTextfild.getText())) {
+                lable.setText("This Title Already Exists!!!");
+                return;
+            }
+        }
 
+        newsList.add(new News(newsTitleTextfild.getText(), textArea.getText()));
         lable.setText("News Sent Successfully");
 
         newsTitleTextfild.clear();
