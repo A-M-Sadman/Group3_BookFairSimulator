@@ -1,8 +1,14 @@
 package com.groupthree.group3_bookfairsimulator.Reya;
 
+import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 public class ActiveAlems
 {
@@ -86,10 +92,19 @@ public class ActiveAlems
         tableView.getItems().add(s1);
 
         // Clear input
-        incidentTypeXombo.getSelectionModel().clearSelection();
         alarmIdtetField.clear();
-        datePICKER.setValue(null);
+        incidentTypeXombo.getSelectionModel().clearSelection();
         locationTextfield.clear();
+
+        datePICKER.setValue(null);
+
         alarmLabel.setText("Successful!");
+    }
+
+    @javafx.fxml.FXML
+    public void dashBoardButton(ActionEvent actionEvent)throws IOException {
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/securityOfficerDashboard.fxml"));
+        Scene scene = new Scene(root);
+        HelloApplication.stage.setScene(scene);
     }
 }

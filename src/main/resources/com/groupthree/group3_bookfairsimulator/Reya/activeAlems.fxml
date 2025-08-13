@@ -31,7 +31,7 @@
             <TableColumn fx:id="dateCol" prefWidth="127.20003662109377" text="Date" />
         </columns>
       </TableView>
-      <Button layoutX="564.0" layoutY="505.0" mnemonicParsing="false" text="Dashboard" />
+      <Button layoutX="564.0" layoutY="505.0" mnemonicParsing="false" onAction="#dashBoardButton" text="Dashboard" />
       <Button layoutX="293.0" layoutY="505.0" mnemonicParsing="false" text="Save" />
       <Label fx:id="alarmLabel" layoutX="59.0" layoutY="430.0" prefHeight="82.0" prefWidth="150.0" />
    </children>
