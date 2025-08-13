@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 import static com.groupthree.group3_bookfairsimulator.Fahim.NewsManager.newsList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.NewsManager.saveNewsList;
 
 public class SendNewstoVisitorsController {
     @javafx.fxml.FXML
@@ -59,11 +60,23 @@ public class SendNewstoVisitorsController {
             return;
         }
 
-        newsList.add(new News(newsTitleTextfild.getText(), textArea.getText()));
+        for (News a : newsList) {
+            if (a.getTitle().equals(newsTitleTextfild.getText())) {
+                lable.setText("This Title Already Exists!!!");
+                return;
+            }
+        }
 
+        newsList.add(new News(newsTitleTextfild.getText(), textArea.getText()));
         lable.setText("News Sent Successfully");
 
         newsTitleTextfild.clear();
         textArea.clear();
+
+        try {
+            NewsManager.saveNewsList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -7,7 +7,7 @@ public class CustomerQuery {
     private String customerName;
     private String message;
 
-    protected static ArrayList<CustomerQuery> queryList = new ArrayList<>();
+    public static ArrayList<CustomerQuery> queryList = new ArrayList<>();
 
     public CustomerQuery(String customerId, String customerName, String message) {
         this.customerId = customerId;
