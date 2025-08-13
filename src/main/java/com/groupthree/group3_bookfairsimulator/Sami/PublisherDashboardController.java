@@ -32,7 +32,7 @@ public class PublisherDashboardController
 
     @javafx.fxml.FXML
     public void updatePublisherButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/updatePublisher.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/updatePublisherProfile.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Publisher Update Done");
         HelloApplication.stage.setScene(scene);
@@ -56,7 +56,7 @@ public class PublisherDashboardController
 
     @javafx.fxml.FXML
     public void cancelStallBookingButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/cancelStallBooking.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/cancelPublisherStallBooking.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
