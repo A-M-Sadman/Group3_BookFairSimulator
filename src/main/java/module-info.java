@@ -9,6 +9,7 @@
 module com.groupthree.group3_bookfairsimulator {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
     opens com.groupthree.group3_bookfairsimulator to javafx.fxml;
     opens com.groupthree.group3_bookfairsimulator.Sami to javafx.fxml;

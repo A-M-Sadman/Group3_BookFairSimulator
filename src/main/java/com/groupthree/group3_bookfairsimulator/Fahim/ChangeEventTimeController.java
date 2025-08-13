@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.Fahim.Event.eventList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.EventManager.eventList;
 
 public class ChangeEventTimeController {
 

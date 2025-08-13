@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -21,14 +22,15 @@
       <DatePicker fx:id="date" layoutX="46.0" layoutY="232.0" promptText="Date " />
       <TableView fx:id="accessTableview" layoutX="340.0" layoutY="113.0" prefHeight="264.0" prefWidth="306.0">
         <columns>
-          <TableColumn fx:id="nameCombo" prefWidth="75.0" text="Name" />
-          <TableColumn fx:id="logIdCombo" prefWidth="75.0" text="Log ID" />
-            <TableColumn fx:id="locationCombo" prefWidth="75.0" text="Location" />
-            <TableColumn fx:id="datecombo" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="logIdCol" prefWidth="75.0" text="Log ID" />
+            <TableColumn fx:id="locationCol" prefWidth="75.0" text="Location" />
+            <TableColumn fx:id="datecol" prefWidth="75.0" text="Date" />
         </columns>
       </TableView>
       <Button layoutX="52.0" layoutY="294.0" mnemonicParsing="false" onAction="#addLogButton" text="Add Log Detais" />
       <TextField fx:id="nameTextField" layoutX="45.0" layoutY="89.0" promptText="Name " />
       <Button layoutX="574.0" layoutY="448.0" mnemonicParsing="false" onAction="#backButton" text="Dashboard" />
+      <Label fx:id="accessSequrityLogsLabel" layoutX="136.0" layoutY="416.0" prefHeight="96.0" prefWidth="150.0" text="Label" />
    </children>
 </AnchorPane>
