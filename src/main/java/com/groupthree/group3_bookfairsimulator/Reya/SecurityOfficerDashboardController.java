@@ -24,7 +24,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void activeAlermButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/activeAlerms.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/activeAlems.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Activate Alarm");
         HelloApplication.stage.setScene(scene);
