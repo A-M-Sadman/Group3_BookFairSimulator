@@ -24,7 +24,7 @@ public class PublisherDashboardController
 
     @javafx.fxml.FXML
     public void logisticButton(ActionEvent actionEvent) throws IOException{
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/logistic.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/logisticSupport.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
