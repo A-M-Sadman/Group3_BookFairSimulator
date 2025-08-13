@@ -34,13 +34,13 @@ public class BookListingController
     private Label messageLabel;
     @javafx.fxml.FXML
     private TableColumn<bookListing,String> bookIDCol;
-    private static final String DATA_FILE_NAME = "Data/booklist.bin";
+    private static final String data = "Data/booklist.bin";
 
 
     static ArrayList<bookListing> getBookList() {
         ArrayList<bookListing> bookList = new ArrayList<>();
 
-        File file = new File(DATA_FILE_NAME);
+        File file = new File(data);
         if (!file.exists()) {
             return bookList;
         }
@@ -65,7 +65,7 @@ public class BookListingController
 
     public static void saveBookList(List<bookListing> bookList) {
         try (ObjectOutputStream stream = new ObjectOutputStream(
-                new FileOutputStream(DATA_FILE_NAME)
+                new FileOutputStream(data)
         )) {
             stream.writeObject(new ArrayList<>(bookList));
         } catch (IOException e) {

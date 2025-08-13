@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.Fahim.feedBack.feedbackList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.feedbackManager.feedbackList;
 
 public class GiveFeedbackController
 {

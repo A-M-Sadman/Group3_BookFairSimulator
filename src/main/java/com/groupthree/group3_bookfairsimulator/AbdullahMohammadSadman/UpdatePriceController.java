@@ -13,7 +13,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book.bookList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager.bookList;
 
 public class UpdatePriceController
 {
@@ -36,7 +36,12 @@ public class UpdatePriceController
         authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        bookTableView.getItems().addAll(bookList);
+//        bookTableView.getItems().addAll(bookList);
+        try {
+            bookTableView.getItems().addAll(bookList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -50,10 +55,10 @@ public class UpdatePriceController
 
     @javafx.fxml.FXML
     public void updatePrice(ActionEvent actionEvent) {
-        if (bookList.isEmpty()){
-            updatePriceLabel.setText("There are no books in the inventory!");
-            return;
-        }
+//        if (bookTableView.getItems().isEmpty()){
+//            updatePriceLabel.setText("There are no books in the inventory!");
+//            return;
+//        }
 
         Book book = bookTableView.getSelectionModel().getSelectedItem();
 
@@ -62,9 +67,15 @@ public class UpdatePriceController
             return;
         }
 
-        if ((newPriceInput.getText().isEmpty()) || (Double.parseDouble(newPriceInput.getText()) < 0)) {
-            updatePriceLabel.setText("Enter a positive number as price!");
-            return;
+        double uPrice;
+        try {
+            uPrice = Double.parseDouble(newPriceInput.getText());
+            if ((newPriceInput.getText().isEmpty()) || (uPrice < 0)) {
+                updatePriceLabel.setText("Enter a positive number as price!");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            throw new RuntimeException(e);
         }
 
         if (book.getQuantity() == 0) {
@@ -72,10 +83,16 @@ public class UpdatePriceController
             return;
         }
 
-        book.setPrice(Double.parseDouble(newPriceInput.getText()));
-        bookTableView.getItems().clear();
-        bookTableView.getItems().addAll(bookList);
+        book.setPrice(uPrice);
+//        bookTableView.getItems().clear();
+//        bookTableView.getItems().addAll(bookList);
 
-        updatePriceLabel.setText("Price updated successfully");
+        try {
+            BookManager.saveBookList();
+            updatePriceLabel.setText("Price updated successfully");
+        } catch (Exception e) {
+            throw new RuntimeException("Couldn't update the price");
+        }
+        bookTableView.refresh();
     }
 }

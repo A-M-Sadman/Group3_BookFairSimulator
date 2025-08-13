@@ -1,34 +1,34 @@
-package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
+package com.groupthree.group3_bookfairsimulator.Fahim;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookManager {
-    private static final String fileName = "Data/book.bin";
+public class NewsManager {
+    private static final String fileName = "Data/News.bin";
 
-    public static final ArrayList<Book> bookList = new ArrayList<>();
+    public static ArrayList<News> newsList = new ArrayList<>();
     static {
-        bookList.addAll(getBookList());
+        newsList.addAll(getNewsList());
     }
 
-    private static ArrayList<Book> getBookList() {
+    private static ArrayList<News> getNewsList() {
 
-        ArrayList<Book> abookList = new ArrayList<>();
+        ArrayList<News> newslist = new ArrayList<>();
 
         try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(fileName))) {
-            abookList = (ArrayList<Book>) stream.readObject();
+            newslist = (ArrayList<News>) stream.readObject();
         } catch (InvalidClassException | ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return abookList;
+        return newslist;
     }
 
-    public static void saveBookList() {
+    public static void saveNewsList() {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<Book> tempList = new ArrayList<>(bookList);
+            ArrayList<News> tempList = new ArrayList<>(newsList);
             stream.writeObject(tempList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,8 +36,10 @@ public class BookManager {
         }
     }
 
-    public static void resetBookList() {
-        bookList.clear();
-        saveBookList();
+    public static void resetEventList() {
+        newsList.clear();
+        saveNewsList();
     }
 }
+
+

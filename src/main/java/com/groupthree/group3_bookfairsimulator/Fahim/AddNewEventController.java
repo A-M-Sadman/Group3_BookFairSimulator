@@ -1,6 +1,7 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
 import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book;
+import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager;
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book.bookList;
-import static com.groupthree.group3_bookfairsimulator.Fahim.Event.eventList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager.bookList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.EventManager.eventList;
 
 public class AddNewEventController
 {
@@ -75,7 +76,13 @@ public class AddNewEventController
 
         eventList.add(b);
         lable.setText("Event successfully added!");
+        try {
+            EventManager.saveEventList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
 
     @javafx.fxml.FXML

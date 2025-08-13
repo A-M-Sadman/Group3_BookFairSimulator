@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static com.groupthree.group3_bookfairsimulator.Fahim.Event.joinList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.EventManager.joinList;
 
 public class SeeWhoJoinedEventController
 {

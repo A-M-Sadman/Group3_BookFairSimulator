@@ -11,8 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static com.groupthree.group3_bookfairsimulator.Fahim.Event.eventList;
-import static com.groupthree.group3_bookfairsimulator.Fahim.Event.joinList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.EventManager.eventList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.EventManager.joinList;
 
 public class MakeMyScheduleController {
     @javafx.fxml.FXML

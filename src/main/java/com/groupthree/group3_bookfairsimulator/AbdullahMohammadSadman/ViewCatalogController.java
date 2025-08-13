@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Book.bookList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager.bookList;
 
 public class ViewCatalogController
 {
@@ -47,7 +47,7 @@ public class ViewCatalogController
             return;
         }
         try {
-            bookTableView.getItems().addAll(BookManager.getBookList());
+            bookTableView.getItems().addAll(bookList);
             showLabel.setText("Data loaded successfully");
         } catch (Exception e) {
             throw new RuntimeException(e);
