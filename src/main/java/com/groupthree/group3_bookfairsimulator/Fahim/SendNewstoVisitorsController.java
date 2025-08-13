@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 import static com.groupthree.group3_bookfairsimulator.Fahim.NewsManager.newsList;
+import static com.groupthree.group3_bookfairsimulator.Fahim.NewsManager.saveNewsList;
 
 public class SendNewstoVisitorsController {
     @javafx.fxml.FXML
@@ -65,5 +66,11 @@ public class SendNewstoVisitorsController {
 
         newsTitleTextfild.clear();
         textArea.clear();
+
+        try {
+            NewsManager.saveNewsList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
