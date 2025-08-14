@@ -79,6 +79,11 @@ public class TalkwithStallOwnersController {
         nameTextfild.clear();
         staffnameTextfild1.clear();
         textarea.clear();
+        try {
+            CustomerQueryManager.saveQueryList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -118,5 +123,18 @@ public class TalkwithStallOwnersController {
         for (CustomerQuery q : queryList) {
             sendertextarea.appendText("Customer: " + q.getCustomerName() + " | Stall: " + q.getCustomerId() + "\n");
         }
+    }
+
+    @javafx.fxml.FXML
+    public void delete(ActionEvent actionEvent) {
+        sendertextarea.clear();
+        staffnameTextfild1.clear();
+        nameTextfild.clear();
+        try {
+            CustomerQueryManager.resetQueryList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        lable.setText("Previous all Message are deleted");
     }
 }
