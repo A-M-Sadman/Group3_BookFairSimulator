@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,6 +15,12 @@ public class CheckSupplyController
 {
     @javafx.fxml.FXML
     private Label checkLabel;
+    @javafx.fxml.FXML
+    private TableColumn equipmentCol;
+    @javafx.fxml.FXML
+    private TableColumn urgencyLevelCol;
+    @javafx.fxml.FXML
+    private TableView suppliesTableView;
 
     @javafx.fxml.FXML
     public void initialize() {

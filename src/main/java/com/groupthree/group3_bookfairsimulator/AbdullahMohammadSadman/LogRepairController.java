@@ -4,7 +4,9 @@ import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -15,7 +17,13 @@ public class LogRepairController
     @javafx.fxml.FXML
     private Label submitLabel;
     @javafx.fxml.FXML
-    private TextField reportInput;
+    private TextArea reportInput;
+    @javafx.fxml.FXML
+    private ComboBox<String> locationInput;
+    @javafx.fxml.FXML
+    private ComboBox<String> urgencyLevelInput;
+    @javafx.fxml.FXML
+    private TextField nameInput;
 
     @javafx.fxml.FXML
     public void initialize() {

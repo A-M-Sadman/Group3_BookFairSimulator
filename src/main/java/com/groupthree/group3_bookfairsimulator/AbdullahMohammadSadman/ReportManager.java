@@ -9,26 +9,26 @@ public class ReportManager {
     protected static ArrayList<Report> reportList = new ArrayList<>();
 
     static {
-        taskList.addAll(getTaskList());
+        reportList.addAll(getReportList());
     }
 
-    private static ArrayList<Task> getTaskList() {
+    private static ArrayList<Report> getReportList() {
 
-        ArrayList<Task> taskList = new ArrayList<>();
+        ArrayList<Report> reports = new ArrayList<>();
 
         try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(fileName))) {
-            taskList = (ArrayList<Task>) stream.readObject();
+            reports = (ArrayList<Report>) stream.readObject();
         } catch (InvalidClassException | ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return taskList;
+        return reports;
     }
 
-    public static void saveTaskList() {
+    public static void saveReportList() {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<Task> tempList = new ArrayList<>(taskList);
+            ArrayList<Report> tempList = new ArrayList<>(reportList);
             stream.writeObject(tempList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,8 +36,8 @@ public class ReportManager {
         }
     }
 
-    public static void resetTaskList() {
-        taskList.clear();
-        saveTaskList();
+    public static void resetReportList() {
+        reportList.clear();
+        saveReportList();
     }
 }
