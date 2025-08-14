@@ -3,32 +3,31 @@ package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 import java.io.*;
 import java.util.ArrayList;
 
-public class CustomerQueryManager {
-    private static final String fileName = "Data/CustomerQuery.bin";
+public class FacilityManager {
+    private static final String fileName = "Data/Facility.bin";
 
-    public static final ArrayList<CustomerQuery> queryList = new ArrayList<>();
-
+    public static final ArrayList<Facility> facilityList = new ArrayList<>();
     static {
-        queryList.addAll(getQueryList());
+        facilityList.addAll(getFacilityList());
     }
 
-    private static ArrayList<CustomerQuery> getQueryList() {
+    private static ArrayList<Facility> getFacilityList() {
 
-        ArrayList<CustomerQuery> queryList = new ArrayList<>();
+        ArrayList<Facility> facilities = new ArrayList<>();
 
         try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(fileName))) {
-            queryList = (ArrayList<CustomerQuery>) stream.readObject();
+            facilities = (ArrayList<Facility>) stream.readObject();
         } catch (InvalidClassException | ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return queryList;
+        return facilities;
     }
 
-    public static void saveQueryList() {
+    public static void saveFacilityList() {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<CustomerQuery> tempList = new ArrayList<>(queryList);
+            ArrayList<Facility> tempList = new ArrayList<>(facilityList);
             stream.writeObject(tempList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,8 +35,8 @@ public class CustomerQueryManager {
         }
     }
 
-    public static void resetQueryList() {
-        queryList.clear();
-        saveQueryList();
+    public static void resetFacilityList() {
+        facilityList.clear();
+        saveFacilityList();
     }
 }

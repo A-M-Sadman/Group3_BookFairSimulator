@@ -3,32 +3,32 @@ package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 import java.io.*;
 import java.util.ArrayList;
 
-public class CustomerQueryManager {
-    private static final String fileName = "Data/CustomerQuery.bin";
+public class TaskManager {
+    protected static final ArrayList<Task> taskList = new ArrayList<>();
 
-    public static final ArrayList<CustomerQuery> queryList = new ArrayList<>();
+    private static final String fileName = "Data/Task.bin";
 
     static {
-        queryList.addAll(getQueryList());
+        taskList.addAll(getTaskList());
     }
 
-    private static ArrayList<CustomerQuery> getQueryList() {
+    private static ArrayList<Task> getTaskList() {
 
-        ArrayList<CustomerQuery> queryList = new ArrayList<>();
+        ArrayList<Task> taskList = new ArrayList<>();
 
         try (ObjectInputStream stream = new ObjectInputStream(new FileInputStream(fileName))) {
-            queryList = (ArrayList<CustomerQuery>) stream.readObject();
+            taskList = (ArrayList<Task>) stream.readObject();
         } catch (InvalidClassException | ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return queryList;
+        return taskList;
     }
 
-    public static void saveQueryList() {
+    public static void saveTaskList() {
         try (ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            ArrayList<CustomerQuery> tempList = new ArrayList<>(queryList);
+            ArrayList<Task> tempList = new ArrayList<>(taskList);
             stream.writeObject(tempList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -36,8 +36,8 @@ public class CustomerQueryManager {
         }
     }
 
-    public static void resetQueryList() {
-        queryList.clear();
-        saveQueryList();
+    public static void resetTaskList() {
+        taskList.clear();
+        saveTaskList();
     }
 }

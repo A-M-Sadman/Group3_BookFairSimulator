@@ -8,8 +8,6 @@ public class Report {
     private String description;
     private LocalDate date;
 
-    protected static ArrayList<Report> reportList = new ArrayList<>();
-
     public Report(String reportId, String description, LocalDate date) {
         this.reportId = reportId;
         this.description = description;

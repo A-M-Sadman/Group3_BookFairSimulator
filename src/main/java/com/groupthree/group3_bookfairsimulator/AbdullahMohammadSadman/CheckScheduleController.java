@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Task.taskList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.TaskManager.taskList;
 
 public class CheckScheduleController
 {
@@ -59,7 +59,11 @@ public class CheckScheduleController
         typeInput.getItems().addAll("Cleaning", "Repair", "Inspection", "Upgrade");
         zoneInput.getItems().addAll("Zone 1", "Zone 2", "Zone 3", "Zone 4");
 
-        taskTableView.getItems().addAll(taskList);
+        try {
+            taskTableView.getItems().addAll(taskList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
@@ -95,6 +99,11 @@ public class CheckScheduleController
                 dateInput.getValue()
         );
         taskList.add(task);
+        try {
+            TaskManager.saveTaskList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         taskTableView.getItems().clear();
         taskTableView.getItems().addAll(taskList);
         assignDutyLabel.setText("Assigned duty succssfully");
