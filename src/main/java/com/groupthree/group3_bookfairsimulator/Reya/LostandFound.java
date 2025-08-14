@@ -92,6 +92,10 @@ public class LostandFound
             return;
 
         }
+        if (imageView.getImage() == null){
+            lostAndFoundLabel.setText("Provide Image");
+            return;
+        }
         visitorNameTextField.clear();
         descriptionOflostTextField.clear();
         descriptionFoundTextField.clear();
@@ -102,7 +106,7 @@ public class LostandFound
 
     @javafx.fxml.FXML
     public void dashBoardButton(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/securityOfficerDashboard.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/HelpDeskOfficerDasboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }
