@@ -32,5 +32,7 @@
       </TableView>
       <Button layoutX="498.0" layoutY="434.0" mnemonicParsing="false" onAction="#dashboardButton" text="Dashboard" />
       <Label fx:id="realTimeSurvillanceLabel" layoutX="76.0" layoutY="425.0" prefHeight="65.0" prefWidth="230.0" />
+      <Button layoutX="191.0" layoutY="221.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="344.0" layoutY="425.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
    </children>
 </AnchorPane>

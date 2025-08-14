@@ -92,4 +92,8 @@ public class RealTimeSurvillance
         HelloApplication.stage.setScene(scene);
 
     }
+
+    @javafx.fxml.FXML
+    public void saveButton(ActionEvent actionEvent) {
+    }
 }
