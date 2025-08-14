@@ -12,7 +12,6 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery.queryList;
 import static com.groupthree.group3_bookfairsimulator.Fahim.NewsManager.newsList;
 
 public class CheckNewsController

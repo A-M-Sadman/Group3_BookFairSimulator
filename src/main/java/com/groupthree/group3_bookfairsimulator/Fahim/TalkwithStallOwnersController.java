@@ -1,6 +1,8 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
+import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager;
 import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery;
+import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQueryManager;
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +15,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery.queryList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQueryManager.queryList;
 
 public class TalkwithStallOwnersController {
     @javafx.fxml.FXML
@@ -68,6 +70,11 @@ public class TalkwithStallOwnersController {
         queryList.add(new CustomerQuery(nameTextfild.getText(), staffnameTextfild1.getText(), textarea.getText()));
 
         lable.setText("Message Sent Successfully");
+        try {
+            CustomerQueryManager.saveQueryList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         nameTextfild.clear();
         staffnameTextfild1.clear();
