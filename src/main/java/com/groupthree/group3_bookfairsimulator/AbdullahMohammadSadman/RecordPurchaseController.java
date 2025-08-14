@@ -36,7 +36,11 @@ public class RecordPurchaseController
         authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        bookTableView.getItems().addAll(bookList);
+        try {
+            bookTableView.getItems().addAll(bookList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
@@ -61,7 +65,13 @@ public class RecordPurchaseController
         }
         book.setQuantity(book.getQuantity() - q);
         book.setTotalSales(book.getTotalSales() + q);
-        recordLabel.setText("Total price is: " + book.getPrice()*q + "\n" + "Recorded to the inventory successfully!");
+        try {
+            BookManager.saveBookList();
+            recordLabel.setText("Total price is: " + book.getPrice()*q + "\n" + "Recorded to the inventory successfully!");
+
+        } catch (Exception e) {
+            throw new RuntimeException("Sorry, Couldn't process the procedure");
+        }
         bookTableView.refresh();
     }
 
