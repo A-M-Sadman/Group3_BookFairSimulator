@@ -56,7 +56,7 @@ public class HelpDeskOfficerDasboardController
 
     @javafx.fxml.FXML
     public void coorDinateButton(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/coordinateWithOrganizer.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/coordinate.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Book Listing Done");
         HelloApplication.stage.setScene(scene);

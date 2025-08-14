@@ -48,7 +48,7 @@ public class SecurityOfficerDashboardController
 
     @javafx.fxml.FXML
     public void assignDutyButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/ assignDuty.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/assign.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Assign Duty Done");
         HelloApplication.stage.setScene(scene);
