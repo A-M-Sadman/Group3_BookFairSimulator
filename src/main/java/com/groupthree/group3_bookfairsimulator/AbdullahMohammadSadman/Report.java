@@ -1,14 +1,13 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Report {
+public class Report implements Serializable {
     private String reportId;
     private String description;
     private LocalDate date;
-
-    protected static ArrayList<Report> reportList = new ArrayList<>();
 
     public Report(String reportId, String description, LocalDate date) {
         this.reportId = reportId;

@@ -16,7 +16,7 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="queryTableView" layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="301.0">
+      <TableView fx:id="queryTableView" layoutX="14.0" layoutY="100.0" onMouseClicked="#messageQuery" prefHeight="200.0" prefWidth="301.0">
         <columns>
           <TableColumn fx:id="queryIdCol" prefWidth="75.0" text="Query ID" />
           <TableColumn fx:id="customerNameCol" prefWidth="75.0" text="Customer Name" />
@@ -26,12 +26,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TextArea fx:id="messageArea" layoutX="355.0" layoutY="134.0" prefHeight="165.0" prefWidth="200.0" promptText="Message" />
+      <TextArea fx:id="messageArea" layoutX="355.0" layoutY="99.0" prefHeight="200.0" prefWidth="200.0" promptText="Message" />
       <TextField fx:id="replyInput" layoutX="15.0" layoutY="307.0" prefHeight="52.0" prefWidth="459.0" promptText="Reply Here" />
       <Button layoutX="15.0" layoutY="361.0" mnemonicParsing="false" onAction="#reply" text="Reply" />
       <Label fx:id="replyLabel" layoutX="70.0" layoutY="361.0" prefHeight="25.0" prefWidth="403.0" />
       <Button layoutX="495.0" layoutY="361.0" mnemonicParsing="false" onAction="#back" text="&lt;- Dashboard" />
-      <TextField fx:id="nameInput" layoutX="355.0" layoutY="100.0" promptText="Enter Your Name" />
-      <Button layoutX="479.0" layoutY="307.0" mnemonicParsing="false" onAction="#query" text="Enter Query" />
    </children>
 </AnchorPane>

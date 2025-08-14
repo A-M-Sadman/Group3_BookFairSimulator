@@ -103,10 +103,17 @@ public class JoinEventController {
             }
         }
 
+
         selected.setParName(parText.getText());
         joinList.add(selected);
         eventList.remove(selected);
         lable.setText("You have joined: " + selected.getTitle());
+
+        try {
+            EventManager.saveJoinList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

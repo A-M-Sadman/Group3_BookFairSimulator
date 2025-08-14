@@ -1,12 +1,13 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Facility {
+public class Facility implements Serializable {
     private String facility;
     private String status;
 
-    protected static ArrayList<Facility> facilityList = new ArrayList<>();
+
 
     public Facility(String facility, String status) {
         this.facility = facility;

@@ -1,13 +1,12 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CustomerQuery {
+public class CustomerQuery implements Serializable {
     private String customerId;
     private String customerName;
     private String message;
-
-    protected static ArrayList<CustomerQuery> queryList = new ArrayList<>();
 
     public CustomerQuery(String customerId, String customerName, String message) {
         this.customerId = customerId;

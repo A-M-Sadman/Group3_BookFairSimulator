@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.ViewSalesController">
    <children>
       <Label layoutX="225.0" layoutY="31.0" text="View Sales">
@@ -13,8 +12,11 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="messageLabel" layoutX="79.0" layoutY="126.0" prefHeight="107.0" prefWidth="441.0" />
-      <Button layoutX="395.0" layoutY="254.0" mnemonicParsing="false" onAction="#showTotalSales" text="Show My Total Sales" />
+      <Label fx:id="messageLabel" layoutX="54.0" layoutY="110.0" prefHeight="121.0" prefWidth="498.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button layoutX="397.0" layoutY="261.0" mnemonicParsing="false" onAction="#showTotalSales" text="Show My Total Sales" />
       <Button layoutX="495.0" layoutY="360.0" mnemonicParsing="false" onAction="#back" text="&lt;- Dashboard" />
    </children>
 </AnchorPane>

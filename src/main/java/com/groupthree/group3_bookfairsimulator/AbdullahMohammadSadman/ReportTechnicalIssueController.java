@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Report.reportList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.ReportManager.reportList;
 
 public class ReportTechnicalIssueController
 {
@@ -38,15 +38,24 @@ public class ReportTechnicalIssueController
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("Date"));
 
-        reportTableView.getItems().addAll(reportList);
+        try {
+            reportTableView.getItems().addAll(reportList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
     public void submit(ActionEvent actionEvent) {
         Report report = new Report(idInput.getText(), descriptionInput.getText(), dateInput.getValue());
         reportList.add(report);
+        ReportManager.saveReportList();
         reportTableView.getItems().clear();
-        reportTableView.getItems().addAll(reportList);
+        try {
+            reportTableView.getItems().addAll(reportList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML

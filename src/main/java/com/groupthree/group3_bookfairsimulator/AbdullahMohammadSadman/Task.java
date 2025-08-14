@@ -1,9 +1,10 @@
 package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Task {
+public class Task implements Serializable {
     private String taskName;
     private String description;
     private String zone;
@@ -20,7 +21,7 @@ public class Task {
         this.date = date;
     }
 
-    protected static ArrayList<Task> taskList = new ArrayList<>();
+
 
     public Task() {
     }

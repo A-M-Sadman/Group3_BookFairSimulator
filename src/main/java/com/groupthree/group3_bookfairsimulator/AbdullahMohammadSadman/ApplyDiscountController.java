@@ -36,7 +36,11 @@ public class ApplyDiscountController
         authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        bookTableView.getItems().addAll(bookList);
+        try {
+            bookTableView.getItems().addAll(bookList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
@@ -73,6 +77,12 @@ public class ApplyDiscountController
         book.setPrice(p);
 //        bookTableView.getItems().clear();
 //        bookTableView.getItems().addAll(bookList);
+        try {
+            BookManager.saveBookList();
+            applyLabel.setText("Price updated successfully");
+        } catch (Exception e) {
+            throw new RuntimeException("Couldn't update the price");
+        }
         bookTableView.refresh();
 
         applyLabel.setText("Applied discount successfully");

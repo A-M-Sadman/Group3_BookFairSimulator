@@ -4,10 +4,16 @@ import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager.bookList;
 
 public class ViewSalesController
 {

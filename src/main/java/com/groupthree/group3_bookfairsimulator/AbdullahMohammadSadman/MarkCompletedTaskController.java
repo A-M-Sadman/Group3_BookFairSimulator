@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Task.taskList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.TaskManager.taskList;
 
 public class MarkCompletedTaskController
 {
@@ -33,7 +33,11 @@ public class MarkCompletedTaskController
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
 
-        taskTableView.getItems().addAll(taskList);
+        try {
+            taskTableView.getItems().addAll(taskList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
@@ -59,7 +63,13 @@ public class MarkCompletedTaskController
             return;
         }
         t.setStatus("Completed");
+        try {
+            TaskManager.saveTaskList();
+            completedLabel.setText("Marked item as completed");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         taskTableView.refresh();
-        completedLabel.setText("Marked item as completed");
+
     }
 }

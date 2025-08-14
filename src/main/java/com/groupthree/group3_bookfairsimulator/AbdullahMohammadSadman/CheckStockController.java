@@ -4,6 +4,8 @@ import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -11,29 +13,20 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager.bookList;
 
 public class CheckStockController
 {
     @javafx.fxml.FXML
-    private TableColumn<Book, String> titleCol;
-    @javafx.fxml.FXML
-    private TableColumn<Book, String> authorCol;
-    @javafx.fxml.FXML
     private Label showStockLabel;
     @javafx.fxml.FXML
-    private TableView<Book> bookTableView;
-    @javafx.fxml.FXML
-    private TableColumn<Book, Double> priceCol;
+    private BarChart<String, Integer> stockBarChart;
 
     @javafx.fxml.FXML
     public void initialize() {
-        titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
-        authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
-        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-
-        bookTableView.getItems().addAll(bookList);
     }
 
     @javafx.fxml.FXML
@@ -49,11 +42,20 @@ public class CheckStockController
             showStockLabel.setText("There is no book available");
             return;
         }
-        Book book = bookTableView.getSelectionModel().getSelectedItem();
-        if (book == null){
-            showStockLabel.setText("Select a book from table");
-            return;
+
+        List<XYChart.Data<String, Integer>> dataPoints = new ArrayList<>();
+
+        for (Book b: bookList){
+            dataPoints.add(new XYChart.Data<>(b.getTitle(), b.getQuantity()));
         }
-        showStockLabel.setText("Stock for " + book.getTitle() + ": " + book.getQuantity());
+
+        XYChart.Series<String, Integer> section1 = new XYChart.Series<>();
+        section1.getData().addAll(dataPoints);
+        section1.setName("Quantity Of Books");
+
+        stockBarChart.getData().clear();
+        stockBarChart.getData().add(section1);
+
+        showStockLabel.setText("Chart loaded successfully");
     }
 }

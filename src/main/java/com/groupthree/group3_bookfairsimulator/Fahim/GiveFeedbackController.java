@@ -92,6 +92,12 @@ public class GiveFeedbackController
         feedbackList.add(new feedBack(visitorName.getText(),book,stall,comboBox.getValue(),ratingcomboBox.getValue()));
 
         lable.setText("Thank you " + visitorName.getText() + ". Your feedback on " + comboBox.getValue() + " has been submitted.");
+
+        try {
+            feedbackManager.savefeedbackList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

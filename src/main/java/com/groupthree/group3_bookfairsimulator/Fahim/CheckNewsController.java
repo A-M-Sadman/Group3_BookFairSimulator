@@ -1,5 +1,6 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
+import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery;
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,8 @@ public class CheckNewsController
     private TextField newstextfild;
     @javafx.fxml.FXML
     private Label lable;
+    @javafx.fxml.FXML
+    private TextArea textarea11;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -35,6 +38,8 @@ public class CheckNewsController
 
     @javafx.fxml.FXML
     public void seeUpdateNews(ActionEvent actionEvent) {
+        textarea11.clear();
+        textarea.clear();
         if (newstextfild.getText().isEmpty()) {
             lable.setText("Please enter a news title");
             return;
@@ -59,5 +64,22 @@ public class CheckNewsController
         AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Fahim/MeetAuthor.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void seetitle(ActionEvent actionEvent) {
+        textarea11.clear();
+        textarea.clear();
+        newstextfild.clear();
+        lable.setText("");
+
+        if (newsList.isEmpty()) {
+            textarea11.setText("No News yet.");
+            return;
+        }
+
+        for (News a : newsList) {
+            textarea11.appendText("Title: " + a.getTitle() + "\n");
+        }
     }
 }
