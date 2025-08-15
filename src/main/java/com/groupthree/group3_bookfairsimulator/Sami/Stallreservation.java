@@ -1,8 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.Sami;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Stallreservation {
+public class Stallreservation implements Serializable  {
     private String stallNumber;
     private String contactNumber;
     private String size;

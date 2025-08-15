@@ -1,6 +1,7 @@
 package com.groupthree.group3_bookfairsimulator.Sami;
 
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,7 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 
 public class PromotionalSupportController
 {
@@ -28,6 +30,47 @@ public class PromotionalSupportController
     private TableColumn<promotionSupport,String> bookIdCol;
     @javafx.fxml.FXML
     private Label promotionLabel;
+    @javafx.fxml.FXML
+    private TableColumn<bookListing,String> bookIDCol;
+    private static final String data = "Data/promotion.bin";
+
+    public static final ArrayList<promotionSupport> promotionSupports = new ArrayList<>();
+
+    private static ArrayList<promotionSupport> getPromotionList() {
+        ArrayList<promotionSupport> promotionSupports = new ArrayList<>();
+
+        File file = new File(data);
+        if (!file.exists()) {
+            return promotionSupports;
+        }
+
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream(file)
+        )) {
+            promotionSupports = (ArrayList<promotionSupport>) stream.readObject();
+        } catch (EOFException e) {
+
+
+        } catch (InvalidClassException | ClassNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Invalid file format please delete file and try again.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error reading book list from file!");
+        }
+
+        return promotionSupports;
+    }
+    public static void savePromotions() {
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream(data)
+        )) {
+            stream.writeObject(new ArrayList<>(promotionSupports));
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Could not save book list to file!");
+        }
+    }
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -37,6 +80,11 @@ public class PromotionalSupportController
 
         promotionTypeCombo.getItems().addAll("X banner","Seminar","Facebook Marketing");
 
+        try {
+            promotionTableView.getItems().addAll(promotionSupports);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
@@ -59,7 +107,9 @@ public class PromotionalSupportController
         }
         promotionSupport addBook = new promotionSupport(bookID, book, type);
 
-        promotionTableView.getItems().add(addBook);
+        promotionSupports.add(addBook);
+        promotionTableView.getItems().clear();
+        promotionTableView.getItems().addAll(promotionSupports);
 
 
         bookIdTextField.clear();
@@ -73,5 +123,15 @@ public class PromotionalSupportController
         AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
+    }
+
+    @javafx.fxml.FXML
+    public void saveButton(ActionEvent actionEvent) {
+        try {
+            savePromotions();
+            promotionLabel.setText("Data saved successfully!");
+        } catch (RuntimeException e) {
+            promotionLabel.setText(e.getMessage());
+        }
     }
 }

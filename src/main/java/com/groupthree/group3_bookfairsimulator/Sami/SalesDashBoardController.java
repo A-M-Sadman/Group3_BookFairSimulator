@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.groupthree.group3_bookfairsimulator.Sami.SalesModelclass.salesModelclasses;
+
 public class SalesDashBoardController
 {
     @javafx.fxml.FXML
@@ -26,23 +28,19 @@ public class SalesDashBoardController
     @javafx.fxml.FXML
     private TableView<SalesModelclass> tableView;
     @javafx.fxml.FXML
-    private TextField revenueTextField;
-    @javafx.fxml.FXML
     private TextField copiesTextField;
-    @javafx.fxml.FXML
-    private TableColumn<SalesModelclass,String> revenueCol;
     @javafx.fxml.FXML
     private TextField bookTitleTextField;
     @javafx.fxml.FXML
-    private TableColumn<Stallreservation,String> copiesSoldCol;
+    private TableColumn<Stallreservation,Integer> copiesSoldCol;
     @javafx.fxml.FXML
-    private BarChart<String,Number> xyChart;
+    private BarChart<String,Integer> xyChart;
 
     @javafx.fxml.FXML
     public void initialize() {
         bookTitleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         copiesSoldCol.setCellValueFactory(new PropertyValueFactory<>("copies"));
-        revenueCol.setCellValueFactory(new PropertyValueFactory<>("revenue"));
+        //revenueCol.setCellValueFactory(new PropertyValueFactory<>("revenue"));
         //topSellingCol.setCellValueFactory(new PropertyValueFactory<>("topSelling"));
 
 
@@ -51,8 +49,8 @@ public class SalesDashBoardController
     @javafx.fxml.FXML
     public void salesButton(ActionEvent actionEvent){
         String title = bookTitleTextField.getText();
-        String copies  = copiesTextField.getText();
-        String revenue = revenueTextField.getText();
+        int copies  = Integer.parseInt(copiesTextField.getText());
+       // String revenue = revenueTextField.getText();
         SalesModelclass s = tableView.getSelectionModel().getSelectedItem();
         if (bookTitleTextField.getText().isEmpty()){
             salesLabel.setText("Please add bookTite");
@@ -62,20 +60,18 @@ public class SalesDashBoardController
             salesLabel.setText("Please add bookTite");
             return;
         }
-        if (revenueTextField.getText().isEmpty()){
-            salesLabel.setText("Please add bookTite");
-            return;
-        }
-        SalesModelclass newBook = new SalesModelclass(title, copies, revenue);
+
+        SalesModelclass newBook = new SalesModelclass(title, copies);
 
 
 
         tableView.getItems().add(newBook);
+        salesModelclasses.add(newBook);
 
 
         bookTitleTextField.clear();
         copiesTextField.clear();
-        revenueTextField.clear();
+        //revenueTextField.clear();
         salesLabel.setText("Book added successfully!");
 
 
@@ -93,5 +89,18 @@ public class SalesDashBoardController
 
     @javafx.fxml.FXML
     public void loadButton(ActionEvent actionEvent) {
+        List<XYChart.Data<String,Integer>> salesList = new ArrayList<>();
+        for (SalesModelclass s : salesModelclasses){
+            salesList.add(new XYChart.Data<>(s.getTitle(),s.getCopies()));
+
+
+        }
+        XYChart.Series<String, Integer> section1 = new XYChart.Series<>();
+        section1.getData().addAll(salesList);
+        section1.setName("Quantity Of Books");
+        xyChart.getData().clear();
+        xyChart.getData().add(section1);
+
+
     }
 }

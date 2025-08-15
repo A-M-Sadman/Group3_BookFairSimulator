@@ -8,7 +8,7 @@ public class bookListing implements Serializable {
     private String title;
     private String bookID;
     private String genre;
-    public static ArrayList<bookListing> bookListings = new ArrayList<>();
+    //public static ArrayList<bookListing> bookListings = new ArrayList<>();
 
     public bookListing(String title, String bookID, String genre) {
         this.title = title;
@@ -40,13 +40,6 @@ public class bookListing implements Serializable {
         this.genre = genre;
     }
 
-    public static ArrayList<bookListing> getBookListings() {
-        return bookListings;
-    }
-
-    public static void setBookListings(ArrayList<bookListing> bookListings) {
-        bookListing.bookListings = bookListings;
-    }
 
     @Override
     public String toString() {

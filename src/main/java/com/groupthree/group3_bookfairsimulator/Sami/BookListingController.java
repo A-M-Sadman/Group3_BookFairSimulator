@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
+
+import static com.groupthree.group3_bookfairsimulator.Sami.bookListingManager.bookListings;
+import static com.groupthree.group3_bookfairsimulator.Sami.bookListingManager.saveList;
 
 public class BookListingController
 {
@@ -23,7 +25,7 @@ public class BookListingController
     @javafx.fxml.FXML
     private TableColumn<bookListing,String> titleCol;
     @javafx.fxml.FXML
-    private TableView<bookListing> bookListingTableView;
+    private  TableView<bookListing> bookListingTableView;
     @javafx.fxml.FXML
     private ComboBox<String> genreCombo;
     @javafx.fxml.FXML
@@ -34,46 +36,6 @@ public class BookListingController
     private Label messageLabel;
     @javafx.fxml.FXML
     private TableColumn<bookListing,String> bookIDCol;
-    private static final String data = "Data/booklist.bin";
-
-
-    static ArrayList<bookListing> getBookList() {
-        ArrayList<bookListing> bookList = new ArrayList<>();
-
-        File file = new File(data);
-        if (!file.exists()) {
-            return bookList;
-        }
-
-        try (ObjectInputStream stream = new ObjectInputStream(
-                new FileInputStream(file)
-        )) {
-            bookList = (ArrayList<bookListing>) stream.readObject();
-        } catch (EOFException e) {
-
-
-        } catch (InvalidClassException | ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Invalid file format please delete file and try again.");
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Error reading book list from file!");
-        }
-
-        return bookList;
-    }
-
-    public static void saveBookList(List<bookListing> bookList) {
-        try (ObjectOutputStream stream = new ObjectOutputStream(
-                new FileOutputStream(data)
-        )) {
-            stream.writeObject(new ArrayList<>(bookList));
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Could not save book list to file!");
-        }
-    }
-
 
 
 
@@ -82,6 +44,11 @@ public class BookListingController
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         bookIDCol.setCellValueFactory(new PropertyValueFactory<>("bookID"));
         genreeCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        try {
+            bookListingTableView.getItems().addAll(bookListings);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         genreCombo.getItems().addAll("Fantasy","Science Fiction", "Mystery", "Thriller", "Horror","Poetry","Romance","History");
 
@@ -118,7 +85,9 @@ public class BookListingController
 
 
 
-        bookListingTableView.getItems().add(newBook);
+        bookListings.add(newBook);
+        bookListingTableView.getItems().clear();
+        bookListingTableView.getItems().addAll(bookListings);
 
 
         titleTextField.clear();
@@ -143,7 +112,7 @@ public class BookListingController
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
         try {
-            saveBookList(bookListingTableView.getItems());
+            bookListingManager.saveList();
             messageLabel.setText("Data saved successfully!");
         } catch (RuntimeException e) {
             messageLabel.setText(e.getMessage());
