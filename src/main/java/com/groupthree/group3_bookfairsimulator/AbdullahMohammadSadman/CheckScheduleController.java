@@ -42,8 +42,6 @@ public class CheckScheduleController
     @javafx.fxml.FXML
     private ComboBox<String> typeInput;
     @javafx.fxml.FXML
-    private CheckBox statusInput;
-    @javafx.fxml.FXML
     private TextArea taskInput;
 
     @javafx.fxml.FXML
@@ -87,9 +85,6 @@ public class CheckScheduleController
         }
 
         String st = "Pending";
-        if (statusInput.isSelected()){
-            st = "Complete";
-        }
         Task task = new Task(
                 staffNameInput.getValue(),
                 taskInput.getText(),

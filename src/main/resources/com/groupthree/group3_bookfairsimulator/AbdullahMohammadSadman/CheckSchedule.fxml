@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -33,14 +32,13 @@
       </TableView>
       <ComboBox fx:id="staffNameInput" layoutX="28.0" layoutY="50.0" prefWidth="150.0" promptText="Staff Name" />
       <ComboBox fx:id="zoneInput" layoutX="29.0" layoutY="124.0" prefWidth="150.0" promptText="Zone" />
-      <DatePicker fx:id="dateInput" layoutX="17.0" layoutY="211.0" />
+      <DatePicker fx:id="dateInput" layoutX="17.0" layoutY="200.0" />
       <Button layoutX="111.0" layoutY="244.0" mnemonicParsing="false" onAction="#assignDuty" text="Assign Duty" />
       <Button layoutX="17.0" layoutY="309.0" mnemonicParsing="false" onAction="#notifyStaff" text="Notify Staff" />
       <Label fx:id="assignDutyLabel" layoutX="16.0" layoutY="270.0" prefHeight="35.0" prefWidth="175.0" />
       <Label fx:id="notifyStaffLabel" layoutX="104.0" layoutY="320.0" prefHeight="62.0" prefWidth="335.0" />
       <Button layoutX="495.0" layoutY="356.0" mnemonicParsing="false" onAction="#back" text="&lt;- Dashboard" />
       <ComboBox fx:id="typeInput" layoutX="28.0" layoutY="158.0" prefWidth="150.0" promptText="Type" />
-      <CheckBox fx:id="statusInput" layoutX="29.0" layoutY="191.0" mnemonicParsing="false" text="Status" />
       <TextArea fx:id="taskInput" layoutX="29.0" layoutY="80.0" prefHeight="25.0" prefWidth="150.0" promptText="Task" />
    </children>
 </AnchorPane>
