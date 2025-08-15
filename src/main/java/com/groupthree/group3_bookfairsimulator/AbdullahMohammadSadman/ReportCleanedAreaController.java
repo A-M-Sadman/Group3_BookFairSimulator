@@ -13,7 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Task.taskList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.TaskManager.taskList;
 
 public class ReportCleanedAreaController
 {
@@ -64,6 +64,7 @@ public class ReportCleanedAreaController
             return;
         }
         t.setStatus("Completed");
+        TaskManager.saveTaskList();
         cleanedLabel.setText("This area is reported as cleaned!");
     }
 }

@@ -32,14 +32,14 @@ public class MeetAuthorController {
 
         comboBox.getItems().addAll("10:00 AM","11:00 AM","12:00 PM","2:00 PM","3:00 PM","4:00 PM");
 
-        if (meetauthorList.isEmpty()) {
-            meetauthorList.add(new meetAuthor("Humayun Ahmed","10:00 AM",LocalDate.of(2025,2,1)));
-            meetauthorList.add(new meetAuthor("Selina Hossain","11:00 AM",LocalDate.of(2025,2,2)));
-            meetauthorList.add(new meetAuthor("Anisul Hoque","12:00 PM",LocalDate.of(2025,2,3)));
-            meetauthorList.add(new meetAuthor("Muhammed Zafar Iqbal","2:00 PM",LocalDate.of(2025,2,4)));
-            meetauthorList.add(new meetAuthor("Syed Manzoorul Islam","3:00 PM",LocalDate.of(2025,2,5)));
-            meetauthorList.add(new meetAuthor("Taslima Nasrin","4:00 PM",LocalDate.of(2025,2,6)));
-        }
+
+//        meetauthorList.add(new meetAuthor("Humayun Ahmed","10:00 AM",LocalDate.of(2025,2,1)));
+//        meetauthorList.add(new meetAuthor("Selina Hossain","11:00 AM",LocalDate.of(2025,2,2)));
+//        meetauthorList.add(new meetAuthor("Anisul Hoque","12:00 PM",LocalDate.of(2025,2,3)));
+//        meetauthorList.add(new meetAuthor("Muhammed Zafar Iqbal","2:00 PM",LocalDate.of(2025,2,4)));
+//        meetauthorList.add(new meetAuthor("Syed Manzoorul Islam","3:00 PM",LocalDate.of(2025,2,5)));
+//        meetauthorList.add(new meetAuthor("Taslima Nasrin","4:00 PM",LocalDate.of(2025,2,6)));
+
 
         tableview.getItems().addAll(meetauthorList);
 
@@ -123,4 +123,22 @@ public class MeetAuthorController {
             registerLable.setText("Showing your registered authors");
         }
     }
+
+    @FXML
+    public void delete(ActionEvent actionEvent) {
+        meetauthorList.addAll(registerlist);
+
+        registerlist.clear();
+
+        meetAuthorManager.savemeetAuthorList();
+        meetAuthorManager.saveregisterList();
+
+        tableview.getItems().clear();
+        tableview.getItems().addAll(meetauthorList);
+
+        registerLable.setText("Registered authors moved back to the main list");
+    }
 }
+
+
+

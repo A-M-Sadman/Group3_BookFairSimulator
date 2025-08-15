@@ -38,7 +38,7 @@ public class EmergencyDrill
 
     @javafx.fxml.FXML
     public void backButon(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/securityOfficerDashboard.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/HelpDeskOfficerDasboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }
@@ -67,6 +67,7 @@ public class EmergencyDrill
         drillTypeCombo.getSelectionModel().clearSelection();
         assignCombo.getSelectionModel().clearSelection();
         datePicker.setValue(null);
+        emergenCydrillLabel.setText("Successful");
 
 
     }

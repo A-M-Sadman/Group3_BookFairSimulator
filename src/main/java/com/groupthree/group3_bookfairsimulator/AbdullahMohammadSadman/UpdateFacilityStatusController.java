@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.Facility.facilityList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.FacilityManager.facilityList;
 
 public class UpdateFacilityStatusController
 {
@@ -34,6 +34,12 @@ public class UpdateFacilityStatusController
 
         statusInput.getItems().addAll("Operational", "Closed");
         facilityInput.getItems().addAll("Restroom", "Medical Room", "Entrance");
+
+        try {
+            facilityTableView.getItems().addAll(facilityList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @javafx.fxml.FXML
@@ -45,8 +51,20 @@ public class UpdateFacilityStatusController
 
     @javafx.fxml.FXML
     public void update(ActionEvent actionEvent) {
+        if (facilityInput.getValue() == null || statusInput.getValue() == null) {
+            return;
+        }
+        for (Facility f:facilityList){
+            if (facilityInput.getValue().equals(f.getFacility())){
+                f.setStatus(statusInput.getValue());
+                FacilityManager.saveFacilityList();
+                facilityTableView.refresh();
+                return;
+            }
+        }
         Facility facility = new Facility(facilityInput.getValue(), statusInput.getValue());
         facilityList.add(facility);
+        FacilityManager.saveFacilityList();
         facilityTableView.getItems().clear();
         facilityTableView.getItems().addAll(facilityList);
     }

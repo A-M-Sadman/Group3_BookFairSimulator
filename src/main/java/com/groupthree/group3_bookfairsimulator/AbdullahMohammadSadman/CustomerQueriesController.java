@@ -2,6 +2,7 @@ package com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman;
 
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery.queryList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQueryManager.queryList;
 
 public class CustomerQueriesController
 {
@@ -28,8 +29,6 @@ public class CustomerQueriesController
     private TextArea messageArea;
     @javafx.fxml.FXML
     private TextField replyInput;
-    @javafx.fxml.FXML
-    private TextField nameInput;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -49,6 +48,10 @@ public class CustomerQueriesController
 
     @javafx.fxml.FXML
     public void reply(ActionEvent actionEvent) {
+        if (replyInput.getText().isEmpty()){
+            replyLabel.setText("write a reply to send!");
+            return;
+        }
         if (queryList.isEmpty()){
             replyLabel.setText("There are no queries!");
             return;
@@ -58,33 +61,23 @@ public class CustomerQueriesController
             replyLabel.setText("Please select a query to answer");
             return;
         }
+        messageArea.setText(c.getMessage());
+
         replyLabel.setText("Reply sent successfully");
         queryList.remove(c);
         replyInput.clear();
+        messageArea.clear();
         queryTableView.getItems().clear();
         queryTableView.getItems().addAll(queryList);
     }
 
     @javafx.fxml.FXML
-    public void query(ActionEvent actionEvent) {
-        if (nameInput.getText().isEmpty()) {
-            replyLabel.setText("Please give your name!");
+    public void messageQuery(Event event) {
+        CustomerQuery c = queryTableView.getSelectionModel().getSelectedItem();
+        if (c == null) {
+            replyLabel.setText("Please select a query to answer");
             return;
         }
-        if (messageArea.getText().isEmpty()){
-            replyLabel.setText("Enter your query please");
-            return;
-        }
-
-        CustomerQuery cq = new CustomerQuery(
-                ""+queryList.size()+1,
-                nameInput.getText(),
-                messageArea.getText()
-        );
-        queryList.add(cq);
-        queryTableView.getItems().clear();
-        queryTableView.getItems().addAll(queryList);
-        messageArea.clear();
-        nameInput.clear();
+        messageArea.setText(c.getMessage());
     }
 }

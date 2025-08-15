@@ -19,8 +19,6 @@ public class ViewSalesController
 {
     @javafx.fxml.FXML
     private Label messageLabel;
-    @javafx.fxml.FXML
-    private BarChart<String, Integer> stockBarChart;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -28,19 +26,6 @@ public class ViewSalesController
 
     @javafx.fxml.FXML
     public void showTotalSales(ActionEvent actionEvent) {
-        List<XYChart.Data<String, Integer>> dataPoints = new ArrayList<>();
-
-        for (Book b: bookList){
-            dataPoints.add(new XYChart.Data<>(b.getTitle(), b.getQuantity()));
-        }
-
-        XYChart.Series<String, Integer> section1 = new XYChart.Series<>();
-        section1.getData().addAll(dataPoints);
-        section1.setName("Quantity Of Books");
-
-        stockBarChart.getData().clear();
-        stockBarChart.getData().add(section1);
-
         messageLabel.setText("Total books sold: " + Book.getTotalSales());
     }
 

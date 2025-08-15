@@ -1,6 +1,8 @@
 package com.groupthree.group3_bookfairsimulator.Fahim;
 
+import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.BookManager;
 import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery;
+import com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQueryManager;
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +15,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQuery.queryList;
+import static com.groupthree.group3_bookfairsimulator.AbdullahMohammadSadman.CustomerQueryManager.queryList;
 
 public class TalkwithStallOwnersController {
     @javafx.fxml.FXML
@@ -68,10 +70,20 @@ public class TalkwithStallOwnersController {
         queryList.add(new CustomerQuery(nameTextfild.getText(), staffnameTextfild1.getText(), textarea.getText()));
 
         lable.setText("Message Sent Successfully");
+        try {
+            CustomerQueryManager.saveQueryList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         nameTextfild.clear();
         staffnameTextfild1.clear();
         textarea.clear();
+        try {
+            CustomerQueryManager.saveQueryList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -111,5 +123,18 @@ public class TalkwithStallOwnersController {
         for (CustomerQuery q : queryList) {
             sendertextarea.appendText("Customer: " + q.getCustomerName() + " | Stall: " + q.getCustomerId() + "\n");
         }
+    }
+
+    @javafx.fxml.FXML
+    public void delete(ActionEvent actionEvent) {
+        sendertextarea.clear();
+        staffnameTextfild1.clear();
+        nameTextfild.clear();
+        try {
+            CustomerQueryManager.resetQueryList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        lable.setText("Previous all Message are deleted");
     }
 }
