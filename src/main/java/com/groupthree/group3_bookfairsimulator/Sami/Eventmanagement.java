@@ -1,14 +1,15 @@
 package com.groupthree.group3_bookfairsimulator.Sami;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Eventmanagement {
+public class Eventmanagement implements Serializable {
     private String eventName;
     private String location;
     private String eventType;
     private String date;
 
-    public static ArrayList<Eventmanagement> eventmanagements = new ArrayList<>();
+
 
     public Eventmanagement(String eventName, String location, String eventType, String date) {
         this.eventName = eventName;
@@ -49,13 +50,7 @@ public class Eventmanagement {
         this.date = date;
     }
 
-    public static ArrayList<Eventmanagement> getEventmanagements() {
-        return eventmanagements;
-    }
 
-    public static void setEventmanagements(ArrayList<Eventmanagement> eventmanagements) {
-        Eventmanagement.eventmanagements = eventmanagements;
-    }
 
     @Override
     public String toString() {

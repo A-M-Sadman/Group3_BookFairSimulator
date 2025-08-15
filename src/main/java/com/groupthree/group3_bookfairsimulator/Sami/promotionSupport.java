@@ -1,12 +1,13 @@
 package com.groupthree.group3_bookfairsimulator.Sami;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class promotionSupport {
+public class promotionSupport implements Serializable{
     private String bookID;
     private String bookTitle;
     private String PromotionalType;
-    public static ArrayList<promotionSupport> promotionSupports = new ArrayList<>();
+
 
     public promotionSupport(String bookID, String bookTitle, String promotionalType) {
         this.bookID = bookID;
@@ -38,13 +39,7 @@ public class promotionSupport {
         PromotionalType = promotionalType;
     }
 
-    public static ArrayList<promotionSupport> getPromotionSupports() {
-        return promotionSupports;
-    }
 
-    public static void setPromotionSupports(ArrayList<promotionSupport> promotionSupports) {
-        promotionSupport.promotionSupports = promotionSupports;
-    }
 
     @Override
     public String toString() {

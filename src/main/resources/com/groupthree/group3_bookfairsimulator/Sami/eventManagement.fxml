@@ -33,5 +33,6 @@
       <Button layoutX="566.0" layoutY="435.0" mnemonicParsing="false" onAction="#backOnaction" text="Back" />
       <Label fx:id="evenManagementLabel" layoutX="70.0" layoutY="387.0" prefHeight="55.0" prefWidth="287.0" />
       <TextField fx:id="EventNametextField" layoutX="48.0" layoutY="118.0" promptText="Event Name" />
+      <Button layoutX="398.0" layoutY="435.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
    </children>
 </AnchorPane>
