@@ -77,4 +77,11 @@ public class SecurityOfficerDashboardController
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);
     }
+
+    @javafx.fxml.FXML
+    public void logOutButton(ActionEvent actionEvent)throws IOException {
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Login.fxml"));
+        Scene scene = new Scene(root);
+        HelloApplication.stage.setScene(scene);
+    }
 }

@@ -32,5 +32,6 @@
       <TextField fx:id="nameTextField" layoutX="45.0" layoutY="89.0" promptText="Name " />
       <Button layoutX="574.0" layoutY="448.0" mnemonicParsing="false" onAction="#backButton" text="Dashboard" />
       <Label fx:id="accessSequrityLogsLabel" layoutX="136.0" layoutY="416.0" prefHeight="96.0" prefWidth="150.0" text="Label" />
+      <Button layoutX="294.0" layoutY="448.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
    </children>
 </AnchorPane>

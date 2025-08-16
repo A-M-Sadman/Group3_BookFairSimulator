@@ -34,7 +34,7 @@ public class ManageSequrityClearence
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/securityOfficerDashboard.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Reya/HelpDeskOfficerDasboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }

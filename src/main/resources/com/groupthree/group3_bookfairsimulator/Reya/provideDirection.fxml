@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Reya.ProvideDirection">
    <children>
@@ -16,10 +17,12 @@
          </font>
       </Text>
       <TextField fx:id="visitorNameTextField" layoutX="37.0" layoutY="122.0" promptText="Visitor Name" />
-      <TextField fx:id="queryIdTextField" layoutX="37.0" layoutY="155.0" promptText="Query ID" />
+      <TextField fx:id="idTextField" layoutX="37.0" layoutY="155.0" promptText="Visitor ID" />
       <TextField fx:id="contactNumber" layoutX="36.0" layoutY="187.0" promptText="Contact Number" />
-      <TextField fx:id="messageTextField" layoutX="37.0" layoutY="225.0" promptText="message" />
-      <DatePicker layoutX="25.0" layoutY="266.0" />
-      <TextArea layoutX="300.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" promptText="Show The Message" />
+      <DatePicker fx:id="datepicker" layoutX="14.0" layoutY="235.0" />
+      <TextArea fx:id="textArea" layoutX="300.0" layoutY="112.0" prefHeight="200.0" prefWidth="200.0" promptText="Show The Message" />
+      <Button layoutX="500.0" layoutY="339.0" mnemonicParsing="false" onAction="#dashboardButton" text="Dashboard" />
+      <Button layoutX="73.0" layoutY="312.0" mnemonicParsing="false" onAction="#addButton" text="Add" />
+      <Label fx:id="label" layoutX="246.0" layoutY="329.0" text="Label" />
    </children>
 </AnchorPane>

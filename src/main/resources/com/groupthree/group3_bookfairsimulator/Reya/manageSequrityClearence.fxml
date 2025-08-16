@@ -22,6 +22,5 @@
       <Button layoutX="238.0" layoutY="296.0" mnemonicParsing="false" onAction="#manageButton" text="Manage Clearance" />
       <Button layoutX="554.0" layoutY="424.0" mnemonicParsing="false" onAction="#backButton" text="Dashboard" />
       <Label fx:id="secuirityClearanceLabel" layoutX="99.0" layoutY="354.0" prefHeight="74.0" prefWidth="190.0" text="Label" />
-      <Button layoutX="465.0" layoutY="424.0" mnemonicParsing="false" text="Save" />
    </children>
 </AnchorPane>

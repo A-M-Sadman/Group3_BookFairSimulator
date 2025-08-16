@@ -3,6 +3,7 @@ package com.groupthree.group3_bookfairsimulator.Reya;
 import com.groupthree.group3_bookfairsimulator.HelloApplication;
 import com.groupthree.group3_bookfairsimulator.Sami.Eventmanagement;
 import com.groupthree.group3_bookfairsimulator.Sami.bookListing;
+import com.groupthree.group3_bookfairsimulator.Sami.bookListingManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Camera;
@@ -11,7 +12,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+
+import static com.groupthree.group3_bookfairsimulator.Sami.bookListingManager.saveList;
 
 public class RealTimeSurvillance
 {
@@ -33,6 +37,58 @@ public class RealTimeSurvillance
     private TableColumn<realTimeSurvilance,String> caneraCol;
     @javafx.fxml.FXML
     private Label realTimeSurvillanceLabel;
+    @javafx.fxml.FXML
+    private TableColumn<realTimeSurvilance,String> bookIDCol;
+    private static final String data = "Data/survillance.bin";
+
+    public static final ArrayList<realTimeSurvilance> realTimeSurvilances1 = new ArrayList<>();
+
+    static {
+        realTimeSurvilances1.addAll(getServailanceList());
+    }
+
+    static ArrayList<realTimeSurvilance> getServailanceList() {
+        ArrayList<realTimeSurvilance> realTimeSurvilances1 = new ArrayList<>();
+
+        File file = new File(data);
+        if (!file.exists()) {
+            return realTimeSurvilances1;
+        }
+
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream(file)
+        )) {
+            realTimeSurvilances1 = (ArrayList<realTimeSurvilance>) stream.readObject();
+        } catch (EOFException e) {
+
+
+        } catch (InvalidClassException | ClassNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Invalid file format please delete file and try again.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error reading book list from file!");
+        }
+
+        return realTimeSurvilances1;
+    }
+    public static void saveSurvailence() {
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream(data)
+        )) {
+            stream.writeObject(new ArrayList<>(realTimeSurvilances1));
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Could not save book list to file!");
+        }
+    }
+    public static void resetSurvailanceList() {
+        realTimeSurvilances1.clear();
+        saveSurvailence();
+    }
+
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -41,6 +97,7 @@ public class RealTimeSurvillance
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         accessCCTVcombo.getItems().addAll("Bangla Academy Pavilion Zone","Suhrawardy Udyan Stalls Zone","Little Magazine Corner Zone","Children's Corner","TSC","Doyel Chattar","Food Court");
 
+        table.getItems().addAll(realTimeSurvilances1);
     }
 
     @javafx.fxml.FXML
@@ -72,7 +129,9 @@ public class RealTimeSurvillance
         realTimeSurvilance addTable = new realTimeSurvilance(CCTV,cameraID,date,description);
 
 
-        table.getItems().add(addTable);
+        realTimeSurvilances1.add(addTable);
+        table.getItems().clear();
+        table.getItems().addAll(realTimeSurvilances1);
 
         // Clear input
         accessCCTVcombo.getSelectionModel().clearSelection();
@@ -95,5 +154,11 @@ public class RealTimeSurvillance
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
+        try {
+            saveList();
+            realTimeSurvillanceLabel.setText("Data saved successfully!");
+        } catch (RuntimeException e) {
+            realTimeSurvillanceLabel.setText(e.getMessage());
+        }
     }
 }

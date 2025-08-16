@@ -1,8 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.Reya;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class realTimeSurvilance {
+public class realTimeSurvilance implements Serializable  {
     private String location;
     private String cameraId;
     private String date;
