@@ -81,7 +81,7 @@ public class SalesDashBoardController
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent)throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/PublisherDashboard.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }

@@ -104,7 +104,7 @@ public class StallResevationController {
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/PublisherDashboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }

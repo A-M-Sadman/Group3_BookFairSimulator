@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="443.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Sami.VisitorComplaints">
+<AnchorPane prefHeight="443.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.groupthree.group3_bookfairsimulator.Sami.VisitorComplaints">
    <children>
       <Text layoutX="146.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor Complaints">
          <font>
@@ -31,5 +31,6 @@
       <Button layoutX="319.0" layoutY="159.0" mnemonicParsing="false" onAction="#visitorComplaintsButton" text="Add Visitor Complaints" />
       <Button layoutX="523.0" layoutY="356.0" mnemonicParsing="false" onAction="#dashBoardButton" text="Dashboard" />
       <Label fx:id="visitorLabel" layoutX="429.0" layoutY="214.0" prefHeight="66.0" prefWidth="138.0" text="Label" />
+      <Button layoutX="437.0" layoutY="356.0" mnemonicParsing="false" onAction="#save" text="Save" />
    </children>
 </AnchorPane>
