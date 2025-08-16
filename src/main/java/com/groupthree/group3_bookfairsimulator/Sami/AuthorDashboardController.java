@@ -15,9 +15,7 @@ public class AuthorDashboardController
     public void initialize() {
     }
 
-    @Deprecated
-    public void boo(ActionEvent actionEvent) {
-    }
+
 
     @javafx.fxml.FXML
     public void bookListingButton(Event event) throws IOException {

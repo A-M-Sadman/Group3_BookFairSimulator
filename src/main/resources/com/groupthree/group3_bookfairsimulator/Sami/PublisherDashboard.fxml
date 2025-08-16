@@ -40,7 +40,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="11.0" layoutY="243.0" mnemonicParsing="false" onAction="#trackSaleButton" prefHeight="29.0" prefWidth="180.0" style="-fx-background-color: #FFCDAB;" text="Track Sale">
+            <Button layoutX="11.0" layoutY="243.0" mnemonicParsing="false" onAction="#trackSaleButton" prefHeight="29.0" prefWidth="180.0" style="-fx-background-color: #FFCDAB;" text="Offer and Discount">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
