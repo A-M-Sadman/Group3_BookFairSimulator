@@ -90,6 +90,8 @@ public class ChangeEventTimeController {
         tableview1.getItems().clear();
         tableview1.getItems().addAll(eventList);
 
+        EventManager.saveEventList();
+
         lable.setText("Event updated successfully");
 
     }
