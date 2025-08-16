@@ -19,7 +19,7 @@
       <TextField fx:id="stallNumberTextField" layoutX="30.0" layoutY="161.0" promptText="Stall ID" />
       <ComboBox fx:id="statusCombobox" layoutX="30.0" layoutY="200.0" prefWidth="150.0" promptText="Status" />
       <Button layoutX="274.0" layoutY="269.0" mnemonicParsing="false" onAction="#cancelButton" text="Cancel" />
-      <Button layoutX="521.0" layoutY="338.0" mnemonicParsing="false" text="back" />
+      <Button layoutX="521.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="back" />
       <Label fx:id="cancelLabel" layoutX="354.0" layoutY="153.0" prefHeight="92.0" prefWidth="198.0" text="Label" />
    </children>
 </AnchorPane>

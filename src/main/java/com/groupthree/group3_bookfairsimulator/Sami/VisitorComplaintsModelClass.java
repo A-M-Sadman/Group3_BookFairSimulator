@@ -1,8 +1,9 @@
 package com.groupthree.group3_bookfairsimulator.Sami;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class VisitorComplaintsModelClass {
+public class VisitorComplaintsModelClass implements Serializable {
     private String name;
     private String id;
     private String contact;

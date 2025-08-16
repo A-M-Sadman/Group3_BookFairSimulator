@@ -64,7 +64,7 @@ public class PublisherDashboardController
 
     @javafx.fxml.FXML
     public void trackSaleButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/trackSale.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/offer.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setTitle("Done");
         HelloApplication.stage.setScene(scene);

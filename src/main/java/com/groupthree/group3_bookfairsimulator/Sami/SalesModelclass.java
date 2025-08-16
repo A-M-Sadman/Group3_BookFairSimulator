@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class SalesModelclass {
     private String title;
-    private String copies;
+    private int copies;
     private String revenue;
     private String topSelling;
 
     public static ArrayList<SalesModelclass> salesModelclasses = new ArrayList<>();
 
 
-    public SalesModelclass(String title, String copies, String revenue) {
+    public SalesModelclass(String title, int copies) {
         this.title = title;
         this.copies = copies;
         this.revenue = revenue;
@@ -26,11 +26,11 @@ public class SalesModelclass {
         this.title = title;
     }
 
-    public String getCopies() {
+    public int getCopies() {
         return copies;
     }
 
-    public void setCopies(String copies) {
+    public void setCopies(int copies) {
         this.copies = copies;
     }
 

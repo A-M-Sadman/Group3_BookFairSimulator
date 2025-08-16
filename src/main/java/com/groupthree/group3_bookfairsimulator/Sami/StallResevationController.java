@@ -12,10 +12,11 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.text.Document;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StallResevationController {
     @javafx.fxml.FXML
@@ -38,6 +39,47 @@ public class StallResevationController {
     private TableColumn<Stallreservation, String> stallSizeCol;
     @javafx.fxml.FXML
     private TableColumn<Stallreservation, String> selectStallCol;
+    private static final String data = "Data/stall.bin";
+
+
+    static ArrayList<Stallreservation> getBookList() {
+        ArrayList<Stallreservation> stall = new ArrayList<>();
+
+        File file = new File(data);
+        if (!file.exists()) {
+            return stall;
+        }
+
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream(file)
+        )) {
+            stall = (ArrayList<Stallreservation>) stream.readObject();
+        } catch (EOFException e) {
+
+
+        } catch (InvalidClassException | ClassNotFoundException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Invalid file format please delete file and try again.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error reading book list from file!");
+        }
+
+        return stall;
+    }
+
+    public static void saveStall(List<Stallreservation> bookList) {
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream(data)
+        )) {
+            stream.writeObject(new ArrayList<>(bookList));
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Could not save book list to file!");
+        }
+    }
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,14 +104,12 @@ public class StallResevationController {
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/AuthorDashboard.fxml"));
+        AnchorPane root = FXMLLoader.load(HelloApplication.class.getResource("Sami/PublisherDashboard.fxml"));
         Scene scene = new Scene(root);
         HelloApplication.stage.setScene(scene);
     }
 
-    @Deprecated
-    public void showStallDetailsButton(ActionEvent actionEvent) {
-    }
+
 
     @javafx.fxml.FXML
     public void confirmButton(ActionEvent actionEvent) {
@@ -109,7 +149,15 @@ public class StallResevationController {
         stallLabel.setText(" successful!");
     }
 
+
+
     @javafx.fxml.FXML
-    public void pdfButton(ActionEvent actionEvent) {
+    public void saveButton(ActionEvent actionEvent) {
+        try {
+            saveStall(stallTable.getItems());
+            stallLabel.setText("Data saved successfully!");
+        } catch (RuntimeException e) {
+            stallLabel.setText(e.getMessage());
+        }
     }
 }
